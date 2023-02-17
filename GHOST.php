@@ -33,9 +33,11 @@ require_once('config.php');
 ?>
 
 <?php 
-$post_of_driver=$_POST['post_of_driver'];
-if($post_of_driver=='driver'){
-$result = pg_query($conn,"SELECT * FROM driver where post_of_driver='$post_of_driver' ");
+$table=($_POST['table']);
+$present_post_grade=$_POST['present_post_grade'];
+if($table=='driver'){
+if($present_post_grade=='driver'){
+$result = pg_query($conn,"SELECT * FROM $table where present_post_grade='$present_post_grade' ");
 
 ?>
 <table class="table table-striped">
@@ -75,7 +77,7 @@ while($row = pg_fetch_array($result)) {
 <td><?php echo $row["driving_licence_no"]; ?></td>
 <td><?php echo $row["date_of_superannuation"]; ?></td>
 <td><?php echo $row["present_place_of_posting"]; ?></td>
-<td><?php echo $row["post_of_driver"]; ?></td>
+<td><?php echo $row["present_post_grade"]; ?></td>
 
 
 </tr>
@@ -91,8 +93,8 @@ else{
 <?php
 }
 }
-elseif($post_of_driver=='senior driver'){
-  $result = pg_query($conn,"SELECT * FROM driver where post_of_driver='$post_of_driver' ");
+elseif($present_post_grade=='senior driver'){
+  $result = pg_query($conn,"SELECT * FROM $table where present_post_grade='$present_post_grade' ");
 
 ?>
 <table class="table table-striped">
@@ -134,7 +136,7 @@ while($row = pg_fetch_array($result)) {
 <td><?php echo $row["driving_licence_no"]; ?></td>
 <td><?php echo $row["date_of_superannuation"]; ?></td>
 <td><?php echo $row["present_place_of_posting"]; ?></td>
-<td><?php echo $row["post_of_driver"]; ?></td>
+<td><?php echo $row["present_post_grade"]; ?></td>
 
 
 </tr>
@@ -150,8 +152,8 @@ else{
 <?php
 }
 }
-elseif($post_of_driver=='Head driver'){
-  $result = pg_query($conn,"SELECT * FROM driver where post_of_driver='$post_of_driver' ");
+elseif($present_post_grade=='Head driver'){
+  $result = pg_query($conn,"SELECT * FROM $table where present_post_grade='$present_post_grade' ");
 
 ?>
 <table class="table table-striped">
@@ -193,7 +195,7 @@ while($row = pg_fetch_array($result)) {
 <td><?php echo $row["driving_licence_no"]; ?></td>
 <td><?php echo $row["date_of_superannuation"]; ?></td>
 <td><?php echo $row["present_place_of_posting"]; ?></td>
-<td><?php echo $row["post_of_driver"]; ?></td>
+<td><?php echo $row["present_post_grade"]; ?></td>
 
 
 </tr>
@@ -209,7 +211,76 @@ else{
 <?php
 }
 }
+}
+elseif($table=='revenue'){
 
+  $result = pg_query($conn,"SELECT * FROM $table where present_post_grade='$present_post_grade' ");
+
+  ?>
+  <table class="table table-striped">
+  <tr>
+  <th scope="col">SL NO.</th>
+  <th scope="col">Name  </th>
+  <th scope="col">Date of Birth </th>
+  <th scope="col">Caste/ Category</th>
+  <th scope="col">HOME BLOCK</th>
+  <th scope="col">EDN QULAFICATION</th>
+  <th scope="col">Date of Entry into Govt. Service</th>
+  
+  <th scope="col">POST NAME (intial grade)</th>
+  <th scope="col">JOI. DATE (present grade)</th>
+  <th scope="col">THEORY</th>
+  <th scope="col">PRACTICAL</th>
+  <th scope="col">DEPRTMENT EXAM </th>
+  <th scope="col">S_DATE </th>
+  <th scope="col">Present place of posting</th>
+  <th scope="col">PERSENT POST</th>
+  
+  </tr>
+  
+  <?php
+  
+  if(pg_num_rows($result)>0){
+  $i=1;
+  while($row = pg_fetch_array($result)) {
+  ?>
+  
+  
+  
+  
+  <tr>
+  
+  <td><?php echo $row["sl_no"]; ?></td>
+  <td><?php echo $row["name"]; ?></td>
+  <td><?php echo $row["category"]; ?></td>
+  <td><?php echo $row["dob"]; ?></td>
+  <td><?php echo $row["home_block"]; ?></td>
+  
+  <td><?php echo $row["edn_qual"]; ?></td>
+  <td><?php echo $row["j_date_govt_service"]; ?></td>
+  <td><?php echo $row["post_name_intial_grade"]; ?></td>
+  <td><?php echo $row["j_date_present_grade"]; ?></td>
+  <td><?php echo $row["theory"]; ?></td>
+  <td><?php echo $row["practical"]; ?></td>
+  <td><?php echo $row["deptt_exam"]; ?></td>
+  <td><?php echo $row["s_date"]; ?></td>
+  <td><?php echo $row["present_place_of_posting"]; ?></td>
+  <td><?php echo $row["present_post_grade"]; ?></td>
+
+  
+  </tr>
+  <?php
+  $i++;
+  }
+  }
+  else{
+  ?>
+  <table class="table table-striped">
+  <tr>
+  <th scope="col" style="text-align:center">Record not found</th>
+  <?php
+  }
+  }
 ?>
 
 

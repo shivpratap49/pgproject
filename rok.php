@@ -37,15 +37,23 @@ require_once('session.php');
 
 ?>
 <?php
-$name=($_POST['name']);
-$total=($_POST['total_marks']);
-$addres=($_POST['address']);
-$departmant=($_POST['depatment']);
+$sl_no=($_POST['sl_no']);
+$name =($_POST['name']);
+$category_caste=($_POST['category_caste']);
+$dob=($_POST['dob']);
 
-$mob=($_POST['mobile_no']);
-$addmision=($_POST['addmissiondate']);
-$centre=($_POST['centre']);
-$enrollment=($_POST['enrollmemnt_no']);
+$h_block=($_POST['h_block']);
+$e_qual=($_POST['e_qual']);
+$j_date=($_POST['j_date']);
+$r_year=($_POST['r_year']);
+$pa_month=($_POST['pa_month']);
+$pa_year=($_POST['pa_year']);
+$fa_month=($_POST['fa_month']);
+$fa_year=($_POST['fa_year']);
+$j_sc_date=($_POST['j_sc_date']);
+$j_hc_date=($_POST['j_hc_date']);
+$s_date=($_POST['s_date']);
+$present_place_of_posting=($_POST['present_place_of_posting']);
 if($enrollment==""||strlen(preg_replace('/\s+/',"",$enrollment))<14||strlen(preg_replace('/\s+/',"",$enrollment))>14) {
   echo "<h2 style=text-align:center;>Failed to insert record Plese insert prper Enrollment<h2>";
   

@@ -40,11 +40,24 @@
     <input type="text" name="post_of_driver" class="form-control" placeholder="ENROLMENT NO.">
     <div class="col-sm-4">
     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-    <select class="form-select" id="specificSizeSelect" name="post_of_driver">
+    <select class="form-select" id="specificSizeSelect" name="table">
+      <option selected>Choose...</option>
+      <option value="driver">DRIVER</option>
+      <option value="revenue">REVENUE</option>
+     
+    </select>
+  </div>
+  <div class="col-sm-4">
+    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+    <select class="form-select" id="specificSizeSelect" name="present_post_grade">
       <option selected>Choose...</option>
       <option value="driver">Junior Driver</option>
       <option value="senior driver">Senior Driver</option>
       <option value="Head driver">Head Driver</option>
+      <option value="AMIN">AMIN</option>
+      <option value="ARI">ARI</option>
+      <option value="RI">RI</option>
+      <option value="RS">RS</option>
     </select>
   </div>
     <button type="submit" name="save" class="btn btn-primary btn-sm m-1">Search</button>
