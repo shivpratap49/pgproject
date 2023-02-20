@@ -37,20 +37,21 @@
 
 <div class="container d-flex justify-content-center align-middle " style="width: 28% ; margin-top: 10rem " >
   <form class="form-control bg-dark   border border-4 border-warning" method="post" action="GHOST.php">
-    <input type="text" name="post_of_driver" class="form-control" placeholder="ENROLMENT NO.">
-    <div class="col-sm-4">
+   
+    <div class="col-sm-4"  style="  width: 48.333%; display: inline-block;">
     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
     <select class="form-select" id="specificSizeSelect" name="table">
       <option selected>Choose...</option>
       <option value="driver">DRIVER</option>
       <option value="revenue">REVENUE</option>
+      <option value="ministry">MINISTRY STAFF</option>
      
     </select>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4" style="  width: 48.333%; display: inline-block;">
     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
     <select class="form-select" id="specificSizeSelect" name="present_post_grade">
-      <option selected>Choose...</option>
+      <option selected value="">Choose...</option>
       <option value="driver">Junior Driver</option>
       <option value="senior driver">Senior Driver</option>
       <option value="Head driver">Head Driver</option>
@@ -58,10 +59,13 @@
       <option value="ARI">ARI</option>
       <option value="RI">RI</option>
       <option value="RS">RS</option>
+      <option value="JRA">JRA</option>
+      <option value="SO">SO</option>
+      <option value="SRA">SRA</option>
     </select>
   </div>
     <button type="submit" name="save" class="btn btn-primary btn-sm m-1">Search</button>
-    <a href="http://localhost/dashboard/projectphp/rok.html">  <button type="button" class="btn btn-success btn-sm">Add Student</button></a>
+    <a href="http://localhost/projectphp/pgproject/rok.html">  <button type="button" class="btn btn-success btn-sm">Add Student</button></a>
     <a href="http://localhost/projectphp/all.php">  <button type="button" class="btn btn-secondary m-1 btn-sm">All Driver</button></a>
     <a href="http://localhost/dashboard/projectphp/delete.html">  <button type="button" class="btn btn-danger btn-sm ">Delete</button></a>
   </form>

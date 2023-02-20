@@ -63,7 +63,7 @@ else{
 
 
 
-$sql = "INSERT INTO `re` (`enrollmemnt_no`, `name`, `total_marks`, `mobile_no`, `address`, `depatment`, `addmissiondate`, `centre`) VALUES ('$enrollment', '$name', '$total', '$mob', '$addres','$departmant', '$addmision','$centre');";
+$sql = "INSERT INTO section_officer () VALUES ('$enrollment', '$name', '$total', '$mob', '$addres','$departmant', '$addmision','$centre');";
 if(pg_query($conn,$sql))
 {
     echo("Record updated succcesfully");

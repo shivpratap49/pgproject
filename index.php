@@ -1,19 +1,33 @@
-
+<?php
+  require_once('config.php');
+ /* $m=1900;
+for ($i = 1; $i<= 200; $i++) {
+ 
+$po="UPDATE revenue SET employee_code='$m' WHERE present_post_grade='RS' AND sl_no='$i'";
+$tr=pg_query($po);
+echo '$tr';
+$m++;
+}*/
+?>
 <?php
   $log=true;
-require_once('config.php');
-if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-$user=($_POST['username']);
-$pass=($_POST['password']);
-$sql="SELECT*FROM user WHERE username='$user' AND password='$pass'" ;
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+$table=($_POST['table']);
+$present_post_grade=$_POST['present_post_grade'];
+$user=($_POST['employee_code']);
+$pass=($_POST['dob']);
+
+$sql="SELECT*FROM $table WHERE employee_code='$user' " ;
 $result=pg_query($conn,$sql);
 $row = pg_fetch_array($result);
 if(pg_num_rows($result)==1){
   session_start();
   $_SESSION['loggedin']=true; 
-  $_SESSION['username']=$user;
-  header("location: search.php");
+  $_SESSION['employee_code']=$user;
+  $_SESSION['table']=$table;
+  $_SESSION['dob']=$pass;
+  header("location: dashboard.php");
 }  
 else{
  $log=false;
@@ -57,20 +71,50 @@ else{
  }
  ?>
     <div style="height: 1000px display:inline; " >
-  <div class="d-flex justify-content-center  d-inline-block border me-auto ms-auto border-warning border-4 bg-dark rounded-4 " style="width:300px; margin-top:9rem">
+   
+  <div class="d-flex justify-content-center  d-inline-block border me-auto ms-auto border-warning border-4 bg-dark rounded-4 " style="width:600px; margin-top:9rem">
   
 
   <form action=index.php method="post">
+  <div class="col-sm-4"  style="  width: 48.333%; display: inline-block;">
+    <label class="form-label text-white" for="specificSizeSelect">DEPARTMENT</label>
+    <select class="form-select" id="specificSizeSelect" name="table">
+      <option selected disabled>Choose...</option>
+      <option value="driver">DRIVER</option>
+      <option value="revenue">REVENUE</option>
+      <option value="ministry">MINISTRY STAFF</option>
+     
+    </select>
+  </div>
+  <div class="col-sm-4 mt-3" style="  width: 48.333%; display: inline-block;">
+    <label class="form-label text-white" for="specificSizeSelect">CURRENT POST</label>
+    <select class="form-select" id="specificSizeSelect" name="present_post_grade">
+      <option selected value="">Choose...</option>
+      <option value="driver">Junior Driver</option>
+      <option value="senior driver">Senior Driver</option>
+      <option value="Head driver">Head Driver</option>
+      <option value="AMIN">AMIN</option>
+      <option value="ARI">ARI</option>
+      <option value="RI">RI</option>
+      <option value="RS">RS</option>
+      <option value="JRA">JRA</option>
+      <option value="SO">SO</option>
+      <option value="SRA">SRA</option>
+    </select>
+  </div>
   <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
-    <label for="exampleInputEmail1" class="form-label text-white">Username</label>
-    <input type="name" name="username"class="form-control" id="name" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label text-white">EMPLOYEE CODE</label>
+    <input type="name" name="employee_code"class="form-control" id="name" aria-describedby="emailHelp">
     
   </div>
   <div class="mb-3 me-auto ms-auto  col-md-8">
-    <label for="exampleInputPassword1" class="form-label text-white">Password</label>
-    <input type="password" class="form-control" id="password" name="password">
+  <label for="start" class="form-label text-white">DOB</label>
+   <input type="date" id="start" name="dob" class="form-control"
+       value="2018-07-22"
+       min="1900-01-01" max="2018-12-31">
+
   </div>
-  <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:33px;">Log in</button>
+  <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:50px;">Log in</button>
 </form>
 </div>
 </div>
