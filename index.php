@@ -62,13 +62,15 @@ else{
         </div>
       </a>
   </nav>
- <?php 
+ <?php
+ if($_SERVER["REQUEST_METHOD"]=="POST"){ 
  if( $log==false){ ?>
   <div class="alert  alert-danger" role="alert">
   Invalid User or Password
 </div>
 <?php
  }
+}
  ?>
     <div style="height: 1000px display:inline; " >
    
@@ -110,8 +112,8 @@ else{
   <div class="mb-3 me-auto ms-auto  col-md-8">
   <label for="start" class="form-label text-white">DOB</label>
    <input type="date" id="start" name="dob" class="form-control"
-       value="2018-07-22"
-       min="1900-01-01" max="2018-12-31">
+       value="2023-01-01"
+       min="1900-01-01" max="2050-12-31">
 
   </div>
   <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:50px;">Log in</button>
