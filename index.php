@@ -27,7 +27,7 @@ if(pg_num_rows($result)==1){
   $_SESSION['employee_code']=$user;
   $_SESSION['table']=$table;
   $_SESSION['dob']=$pass;
-  header("location: dashboard.php");
+  header("location: home.php");
 }  
 else{
  $log=false;
