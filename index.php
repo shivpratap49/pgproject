@@ -39,7 +39,7 @@ else{
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Log in</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
   <body>
@@ -78,30 +78,21 @@ else{
   
 
   <form action=index.php method="post">
-  <div class="col-sm-4"  style="  width: 48.333%; display: inline-block;">
+  <div class="col-sm-4  mx-1"  style="  width: 48.333%; display: inline-block; ">
     <label class="form-label text-white" for="specificSizeSelect">DEPARTMENT</label>
-    <select class="form-select" id="specificSizeSelect" name="table">
+    <select class="form-select" id="specificSizeSelectn" name="table" style="width: 200px;" >
       <option selected disabled>Choose...</option>
-      <option value="driver">DRIVER</option>
-      <option value="revenue">REVENUE</option>
+      <option value="driver">DRIVER STAFF</option>
+      <option value="revenue">REVENUE STAFF</option>
       <option value="ministry">MINISTRY STAFF</option>
      
     </select>
   </div>
   <div class="col-sm-4 mt-3" style="  width: 48.333%; display: inline-block;">
-    <label class="form-label text-white" for="specificSizeSelect">CURRENT POST</label>
-    <select class="form-select" id="specificSizeSelect" name="present_post_grade">
-      <option selected value="">Choose...</option>
-      <option value="driver">Junior Driver</option>
-      <option value="senior driver">Senior Driver</option>
-      <option value="Head driver">Head Driver</option>
-      <option value="AMIN">AMIN</option>
-      <option value="ARI">ARI</option>
-      <option value="RI">RI</option>
-      <option value="RS">RS</option>
-      <option value="JRA">JRA</option>
-      <option value="SO">SO</option>
-      <option value="SRA">SRA</option>
+    <label class="form-label text-white" for="specificSizeSelect"> POST</label>
+    <select class="form-select" id="specificSizeSelecta" name="present_post_grade" style="width: 200px;">
+   <option selected disabled>Choose...</option>
+     
     </select>
   </div>
   <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
@@ -116,10 +107,40 @@ else{
        min="1900-01-01" max="2050-12-31">
 
   </div>
-  <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:50px;">Log in</button>
+  <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:68px;">Log in</button>
 </form>
 </div>
 </div>
+<script>
+  document.getElementById("specificSizeSelectn").addEventListener("change", populate);
+  function populate(){
+    var s1=document.getElementById("specificSizeSelectn");
+    var s2=document.getElementById("specificSizeSelecta");
+    
+    s2.innerHTML="";
+    
+    if(s1.value=="driver")
+    {
+      var optionArray=['driver|Junior Driver','senior driver|Senior Driver','Head driver|Head Driver'];
+    }
+   else if(s1.value=="revenue")
+   {
+      var optionArray=['AMIN|AMIN','ARI| ASSISTANT REVENUE INSPECTOR ,','RI|REVENUE INSPECTOR','RS|REVENUE SUPERVISOR'];
+    }
+    else if(s1.value=="ministry")
+    {
+      var optionArray=['JRA| JUNIOR REVENUE ASSISTANTS','SRA| SENIOR REVENUE ASSISTANTS ','SO|SECTION OFFICERS '];
+    }
+    for(var option in optionArray)
+{
+  var pair=optionArray[option].split("|");
+  var newoption=document.createElement("option");
+  newoption.value=pair[0];
+  newoption.innerHTML=pair[1];
+  s2.options.add(newoption);
+}
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

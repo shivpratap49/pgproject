@@ -8,7 +8,7 @@ require_once('session.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
@@ -49,20 +49,9 @@ require_once('session.php');
             <div class=" d-flex justify-content-center  ">
                 <div class="d-inline-flex p-2 ">
 
-                    <button type="button" class="btn btn-info " onclick=" myFunction()"> PHOTO</button>
+                    <button type="button" class="btn btn-info " onclick=" myFunction()"> PROFILE VIEW/EDIT</button>
                 </div>
-                <div class="d-inline-flex p-2 ">
-                    <button type="button" class="btn btn-info ">SIGNATURE</button>
-                </div>
-                <div class="d-inline-flex p-2 ">
-                    <button type="button" class="btn btn-info ">ADDRESS</button>
-                </div>
-                <div class="d-inline-flex p-2 ">
-                    <button type="button" class="btn btn-info ">MOBILE NO.</button>
-                </div>
-                <div class="d-inline-flex p-2 ">
-                    <button type="button" class="btn btn-info ">WHATSAPP NO.</button>
-                </div>
+                
             </div>
         </div>
         <div class="container justify-content-center border border border-2 border-success  ">
@@ -70,14 +59,11 @@ require_once('session.php');
                <p>  VIEW </p>
             </div>
             <div class=" d-flex justify-content-center  ">
-                <div class="d-inline-flex p-2 ">
-
-                    <button type="button" class="btn btn-info  px-5">SELF GRADATION</button>
-                </div>
+               
                
                 
                 <div class="d-inline-flex p-2 ">
-                    <button type="button" class="btn btn-info ">EMLOYEE DEPARTMENT GRADATION</button>
+                    <button type="button" class="btn btn-info " onclick=" gradation()"><?php echo strtoupper($_SESSION['table']);?> GRADATION</button>
                 </div>
             </div>
         </div>
@@ -103,6 +89,11 @@ require_once('session.php');
     <script>
     function myFunction(){
         window.location = "dashboard.php";
+
+    }
+    function gradation(){
+        window.location = "grdation.php";
+
     }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
