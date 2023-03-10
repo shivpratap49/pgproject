@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg text-light bg-dark m-0">
-        <div class="  ms-1">
-            <a class="navbar-brand m-0" href="#">
-                <img src="EmblemN.png" alt="Bootstrap" width="60" height="50">
-            </a>
-        </div>
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Bootstrap" width="150" height="40">
-            </a>
-        </div>
-
-        <div class="  ms-1">
-            <a class="navbar-brand m-0" href="#">
-                <img src="flag.png" alt="Bootstrap" width="80" height="50">
-            </a>
-        </div>
-        </a>
-    </nav>
     <?php
   require_once('config.php');
   require_once('session.php');
+  include('header.php');
 $user=$_SESSION['employee_code'];
 $table=$_SESSION['table'];
 $pass=$_SESSION['dob'];
@@ -49,7 +18,7 @@ $pass=$_SESSION['dob'];
       
 
       ?>
-    <table class="table table-striped">
+    <table class="table table-striped" style="font-size: 14px;">
         <tr>
             <th scope="col">Index</th>
             <th scope="col">Name of the Driver </th>
@@ -130,7 +99,7 @@ $pass=$_SESSION['dob'];
       
 
         ?>
-                <table class="table table-striped">
+                <table class="table table-striped" style="font-size: 14px;">
                     <tr>
                         <th scope="col">Index</th>
                         <th scope="col">Name of the Driver </th>
@@ -202,7 +171,7 @@ $pass=$_SESSION['dob'];
             }
           } else {
             ?>
-                    <table class="table table-striped">
+                    <table class="table table-striped" style="font-size: 14px;">
                         <tr>
                             <th scope="col" style="text-align:center">Record not found</th>
                             <?php
@@ -211,7 +180,7 @@ $pass=$_SESSION['dob'];
       
 
           ?>
-                            <table class="table table-striped">
+                            <table class="table table-striped" style="font-size: 14px;">
                                 <tr>
                                     <th scope="col">Index</th>
                                     <th scope="col">Name of the Driver </th>
@@ -293,7 +262,7 @@ $pass=$_SESSION['dob'];
       $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='AMIN' ORDER BY sl_no ASC;");
 
       ?>
-                                        <table class="table table-striped">
+                                        <table class="table table-striped" style="font-size: 14px;">
                                             <tr>
                                                 <th scope="col">SL NO.</th>
                                                 <th scope="col">Name </th>
@@ -388,7 +357,7 @@ $pass=$_SESSION['dob'];
               $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='ARI' ORDER BY sl_no ASC;");
 
       ?>
-                                                    <table class="table table-striped">
+                                                    <table class="table table-striped" style="font-size: 14px;">
                                                         <tr>
                                                             <th scope="col">SL NO.</th>
                                                             <th scope="col">Name </th>
@@ -484,17 +453,17 @@ $pass=$_SESSION['dob'];
               $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='RI' ORDER BY sl_no ASC;");
 
       ?>
-                                                                <table class="table table-striped">
+                                                                <table class="table table-striped"
+                                                                    style="font-size: 14px;">
                                                                     <tr>
                                                                         <th scope="col">SL NO.</th>
                                                                         <th scope="col">Name </th>
                                                                         <th scope="col">Date of Birth </th>
                                                                         <th scope="col">Caste/ Category</th>
                                                                         <th scope="col">HOME BLOCK</th>
-                                                                        <th scope="col">EDN QULAFICATION</th>
+                                                                        <th scope="col">EDN QULA.</th>
                                                                         <th scope="col">Date of Entry into Govt. Service
                                                                         </th>
-
                                                                         <th scope="col">POST NAME (intial grade)</th>
                                                                         <th scope="col">JOI. DATE (present grade)</th>
                                                                         <th scope="col">THEORY</th>
@@ -580,7 +549,8 @@ $pass=$_SESSION['dob'];
               }$result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='RS' ORDER BY sl_no ASC;");
 
               ?>
-                                                                            <table class="table table-striped">
+                                                                            <table class="table table-striped"
+                                                                                style="font-size: 14px;">
                                                                                 <tr>
                                                                                     <th scope="col">SL NO.</th>
                                                                                     <th scope="col">Name </th>
@@ -688,7 +658,8 @@ $pass=$_SESSION['dob'];
 
     ?>
                                                                                         <table
-                                                                                            class="table table-striped">
+                                                                                            class="table table-striped"
+                                                                                            style="font-size: 14px;">
                                                                                             <tr>
                                                                                                 <th scope="col">SL NO.
                                                                                                 </th>
@@ -817,7 +788,8 @@ $pass=$_SESSION['dob'];
 
     ?>
                                                                                                     <table
-                                                                                                        class="table table-striped">
+                                                                                                        class="table table-striped"
+                                                                                                        style="font-size: 14px;">
                                                                                                         <tr>
                                                                                                             <th
                                                                                                                 scope="col">
@@ -991,7 +963,8 @@ $pass=$_SESSION['dob'];
 
     ?>
                                                                                                                 <table
-                                                                                                                    class="table table-striped">
+                                                                                                                    class="table table-striped"
+                                                                                                                    style="font-size: 14px;">
                                                                                                                     <tr>
                                                                                                                         <th
                                                                                                                             scope="col">

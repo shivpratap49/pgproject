@@ -7,41 +7,9 @@ $pass=$_SESSION['dob'];
 
   
  
- ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg text-light bg-dark m-0">
-        <div class="  ms-1">
-            <a class="navbar-brand m-0" href="#">
-                <img src="EmblemN.png" alt="Bootstrap" width="60" height="50">
-            </a>
-        </div>
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Bootstrap" width="150" height="40">
-            </a>
-        </div>
-
-        <div class="  ms-1">
-            <a class="navbar-brand m-0" href="#">
-                <img src="flag.png" alt="Bootstrap" width="80" height="50">
-            </a>
-        </div>
-        </a>
-    </nav>
+ 
+include('header.php')
+?>
     <?php
   if(isset($_POST["submit"])) {
     $address=$_POST['h_block'];
@@ -132,11 +100,11 @@ echo "Sorry!";
                                 </div>
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0"><?php echo$row['employee_code'];?></p>
-                                    <div ><img src="<?php echo $row['image_path'] ?>" alt="avatar" class="rounded img-fluid border border-dark"
-                                style="width: 130px; height: 150px; position:absolute; right: 40px; top:5px">
+                                    <div ><img src="<?php echo $row['image_path'] ?>" alt="avatar" class="rounded-top img-fluid border border-dark border border-bottom-0"
+                                style="width: 120px; height: 130px; position:absolute; right: 40px; top:5px">
 
-                                    <img src="<?php echo $row['signature_path'] ?>" alt="avatar" class="border border-dark rounded img-fluid"
-                                    style="width: 100px; height: 50px; position:absolute; right: 40px; bottom:10px;" >
+                                    <img src="<?php echo $row['signature_path'] ?>" alt="avatar" class="border border-dark  img-fluid border border-top-0 rounded-bottom"
+                                    style="width: 120px; height: 30px; position:absolute; right: 40px; top: 135px;" >
                                     </div>
 
                                 </div>

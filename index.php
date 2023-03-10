@@ -1,5 +1,6 @@
 <?php
   require_once('config.php');
+  include('header.php');
  /* $m=1900;
 for ($i = 1; $i<= 200; $i++) {
  
@@ -34,34 +35,7 @@ else{
 }
 }
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log in</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg text-light bg-dark m-0">
-    <div class="  ms-1">
-      <a class="navbar-brand m-0" href="#">
-        <img src="EmblemN.png" alt="Bootstrap" width="60" height="50">
-      </a>
-    </div>
-    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="Bootstrap" width="150" height="40">
-      </a></div>
-     
-        <div class="  ms-1">
-            <a class="navbar-brand m-0" href="#">
-            <img src="flag.png" alt="Bootstrap" width="80" height="50">
-          </a>
-        </div>
-      </a>
-  </nav>
+
  <?php
  if($_SERVER["REQUEST_METHOD"]=="POST"){ 
  if( $log==false){ ?>
@@ -74,7 +48,7 @@ else{
  ?>
     <div style="height: 1000px display:inline; " >
    
-  <div class="d-flex justify-content-center  d-inline-block border me-auto ms-auto border-warning border-4 bg-dark rounded-4 " style="width:600px; margin-top:9rem">
+  <div class="d-flex justify-content-center  d-inline-block border me-auto ms-auto border-warning border-4 bg-primary rounded-4 " style="width:600px; margin-top:9rem">
   
 
   <form action=index.php method="post">
@@ -107,7 +81,7 @@ else{
        min="1900-01-01" max="2050-12-31">
 
   </div>
-  <button type="submit" class="btn btn-primary  col-md-8 mb-4  " style="margin-left:68px;">Log in</button>
+  <button type="submit" class="btn btn-warning  col-md-8 mb-4  " style="margin-left:68px;">Log in</button>
 </form>
 </div>
 </div>
@@ -121,15 +95,15 @@ else{
     
     if(s1.value=="driver")
     {
-      var optionArray=['driver|Junior Driver','senior driver|Senior Driver','Head driver|Head Driver'];
+      var optionArray=['Head driver|Head Driver','senior driver|Senior Driver','driver|Junior Driver'];
     }
    else if(s1.value=="revenue")
    {
-      var optionArray=['AMIN|AMIN','ARI| ASSISTANT REVENUE INSPECTOR ,','RI|REVENUE INSPECTOR','RS|REVENUE SUPERVISOR'];
+      var optionArray=['RI|REVENUE INSPECTOR','RS|REVENUE SUPERVISOR','AMIN|AMIN','ARI|ASSISTANT REVENUE INSPECTOR'];
     }
     else if(s1.value=="ministry")
     {
-      var optionArray=['JRA| JUNIOR REVENUE ASSISTANTS','SRA| SENIOR REVENUE ASSISTANTS ','SO|SECTION OFFICERS '];
+      var optionArray=['SO|SECTION OFFICERS ','SRA|SENIOR REVENUE ASSISTANTS ','JRA|JUNIOR REVENUE ASSISTANTS'];
     }
     for(var option in optionArray)
 {
@@ -142,5 +116,7 @@ else{
   }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<?php include('footer.php');
+ ?>
   </body>
 </html>
