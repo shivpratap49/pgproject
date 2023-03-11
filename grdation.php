@@ -14,7 +14,7 @@ $pass=$_SESSION['dob'];
   
 
     if ($table == 'driver') {
-      $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='driver' ORDER BY sl_no ASC;");
+      $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Junior Driver' ORDER BY sl_no ASC;");
       
 
       ?>
@@ -95,7 +95,7 @@ $pass=$_SESSION['dob'];
                 <th scope="col" style="text-align:center">Record not found</th>
                 <?php
         }
-        $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='senior driver' ORDER BY sl_no ASC;");
+        $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Senior Driver' ORDER BY sl_no ASC;");
       
 
         ?>
@@ -176,7 +176,7 @@ $pass=$_SESSION['dob'];
                             <th scope="col" style="text-align:center">Record not found</th>
                             <?php
           }
-          $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Head driver' ORDER BY sl_no ASC;");
+          $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Head Driver' ORDER BY sl_no ASC;");
       
 
           ?>
@@ -354,7 +354,7 @@ $pass=$_SESSION['dob'];
                                                     <th scope="col" style="text-align:center">Record not found</th>
                                                     <?php
               }
-              $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='ARI' ORDER BY sl_no ASC;");
+              $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Assistant Revenue Inspector' ORDER BY sl_no ASC;");
 
       ?>
                                                     <table class="table table-striped" style="font-size: 14px;">
@@ -450,7 +450,7 @@ $pass=$_SESSION['dob'];
                                                                     found</th>
                                                                 <?php
               }
-              $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='RI' ORDER BY sl_no ASC;");
+              $result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Revenue Inspector' ORDER BY sl_no ASC;");
 
       ?>
                                                                 <table class="table table-striped"
@@ -546,7 +546,7 @@ $pass=$_SESSION['dob'];
                                                                             <th scope="col" style="text-align:center">
                                                                                 Record not found</th>
                                                                             <?php
-              }$result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='RS' ORDER BY sl_no ASC;");
+              }$result = pg_query($conn, "SELECT * FROM $table WHERE present_post_grade='Revenue Supervisor' ORDER BY sl_no ASC;");
 
               ?>
                                                                             <table class="table table-striped"
@@ -654,7 +654,7 @@ $pass=$_SESSION['dob'];
   
   elseif ($table =='ministry') {
 
-    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='JRA' ");
+    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='Junior Revenue Assistant' ");
 
     ?>
                                                                                         <table
@@ -784,7 +784,7 @@ $pass=$_SESSION['dob'];
                                                                                                     <?php
                                     }
                                     
-    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='SRA' ");
+    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='Senior Revenue Assistant' ");
 
     ?>
                                                                                                     <table
@@ -1147,6 +1147,6 @@ $pass=$_SESSION['dob'];
                                                                                                                         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
                                                                                                                         crossorigin="anonymous">
                                                                                                                     </script>
-</body>
-
-</html>
+<?php
+include('footer.php')
+?>

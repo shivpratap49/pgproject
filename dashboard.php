@@ -101,10 +101,10 @@ echo "Sorry!";
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0"><?php echo$row['employee_code'];?></p>
                                     <div ><img src="<?php echo $row['image_path'] ?>" alt="avatar" class="rounded-top img-fluid border border-dark border border-bottom-0"
-                                style="width: 120px; height: 130px; position:absolute; right: 40px; top:5px">
+                                style="width: 120px; height: 120px; position:absolute; right: 40px; top:5px">
 
                                     <img src="<?php echo $row['signature_path'] ?>" alt="avatar" class="border border-dark  img-fluid border border-top-0 rounded-bottom"
-                                    style="width: 120px; height: 30px; position:absolute; right: 40px; top: 135px;" >
+                                    style="width: 120px; height: 30px; position:absolute; right: 40px; top: 125px;" >
                                     </div>
 
                                 </div>
@@ -241,51 +241,12 @@ echo "Sorry!";
         </div>
         </div>
     </section>
-    <script>
-    function show() {
-        var a = document.getElementById("fileToUpload");
-        var b = document.getElementById("btphotoupload");
-        var c = document.getElementById("btphoto");
-        a.style.display = "block";
-        a.click();
-        b.style.display = "inline";
-        c.style.display = "none";
-
-    }
-
-    function showsig() {
-        var d = document.getElementById("fileToUploadsi");
-        var e = document.getElementById("signchoose");
-        var f = document.getElementById("btnsign");
-        d.style.display = "block";
-        d.click();
-        e.style.display = "inline";
-        f.style.display = "none";
-    }
-
-    function validate() {
-
-        let x = document.forms["form"]["h_block"].value;
-        let mob_no = document.forms["form"]["mob_no"].value;
-        let whats = document.forms["form"]["whats_no"].value;
-        let mob_er = document.getElementById("mob");
-        let whats_er = document.getElementById("whats");
-        let ad_er = document.getElementById("address");
-        if (x == "") {
-            ad_er.style.display = "inline";
-            return false;
-        } else if ((mob_no.length > 10) || (mob_no.length < 10)) {
-            mob_er.style.display = "inline";
-            return false;
-        } else if ((whats.length > 10) || (whats.length < 10)) {
-            whats_er.style.display = "inline";
-            return false;
-        }
-    }
+    <script src="js/dashboard.js">
+   
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
-</body>
-
-</html>
+<?php
+include('footer.php');
+?>

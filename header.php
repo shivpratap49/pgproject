@@ -17,7 +17,7 @@
     
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="Bootstrap" width="150" height="40">
+        <img src="images/logo.png" alt="Bootstrap" width="75%" hieght="50%">
       </a></div>
       <?php
       if(isset($_SESSION['loggedin'])){

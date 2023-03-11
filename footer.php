@@ -11,3 +11,5 @@
     <p class="text-center text-light">&copy; 2023 NIC CUTTACK</p>
   </footer>
 </div>
+</body>
+</html>
