@@ -1,0 +1,14 @@
+
+#cont{
+    display: flex;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+   
+}
+#login{
+    width: 20em;
+    
+    background-color: aqua;
+}
