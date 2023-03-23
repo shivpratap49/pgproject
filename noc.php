@@ -28,7 +28,7 @@ $table=$_SESSION['table'];
 $pass=$_SESSION['dob'];
 $result = pg_query($conn,"SELECT * FROM $table where employee_code='$user' ");
 $row = pg_fetch_array($result);
-$result1 = pg_query($conn,"SELECT * FROM applicatio where employee_code='$user'ORDER BY apply_date DESC; ");
+$result1 = pg_query($conn,"SELECT * FROM applicatio where employee_code='$user'AND form_type='NOC' ORDER BY apply_date DESC; ");
 
 
 ?>
@@ -46,11 +46,12 @@ date_default_timezone_set("Asia/Kolkata");
   if(($exam!="" && $advt!="" && $board!="")){
   $sql = "INSERT INTO applicatio (application_no,employee_code,exam_name,advt_no,board_name,form_type,action,apply_date) VALUES ('$application_no', '$user', '$exam', '$advt', '$board','$form_type','Pending','$date');";
 if(pg_query($conn,$sql))
-{?>
+{ ?>
     <div class="alert alert-success" role="alert">
         Your Application send Successfully.
     </div>
-    <?php
+    <?php 
+    header("location: noc.php");
 }
 else
 echo"Error";
@@ -64,12 +65,12 @@ else{
     <?php
 }}
 ?><div style="min-height:100%">
-        <div class="d-flex p-2 border border-1 justify-content-evenly mb-5">
-            <button type="button" class="btn btn-success" onclick="preapp()"
+        <div class="d-flex p-2  bg-dark justify-content-evenly mb-5">
+            <button type="button" class="btn btn-warning" onclick="preapp()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 Status of Apllication
             </button>
-            <button type="button" class="btn btn-success" onclick="newapp()"
+            <button type="button" class="btn btn-warning" onclick="newapp()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 New Application
             </button>
@@ -99,12 +100,13 @@ if (pg_num_rows($result1) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row1['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td></td>
-                            <td><?php if($row1['action']==""){
-        echo "Pending";
-      }elseif($row1['action']==true||$row1['action']=="true"){
-        echo "Approved";
-      };?></td>
+                            <td><?php $stDate = date("d-m-Y", strtotime($row1['status_update_date']));  
+    if($stDate=='01-01-1970'){
+        echo "";
+    }else{
+        echo $stDate;
+    }   ?></td>
+                            <td><?php echo $row1['action'];?></td>
                         </tr>
                         <?php
             $i++;

@@ -17,25 +17,53 @@
 require_once('config.php');
 require_once('admin_session.php');
   include('header.php');
-  $result_noc = pg_query($conn,"SELECT * FROM applicatio WHERE action='pending' AND form_type='NOC' ");
+  if(isset($_GET["application_no"])){
+    $uaction=($_GET['status']);
+    $app=($_GET["application_no"]);
+    date_default_timezone_set("Asia/Kolkata");
+    $date=date("d/m/y");
+    date_default_timezone_set("Asia/Kolkata");
+    $time=date("h:i:s");
+    if (!$uaction==""&& !$app==""){
+    $sql = "UPDATE applicatio SET action='$uaction', status_update_date='$date' WHERE application_no='$app' ";
+    if(pg_query($conn,$sql))
+    { ?>
+    <div class="alert alert-success" role="alert">
+        Application Status updated Successfully.
+    </div>
+    <?php 
+        
+    }
+    else
+    echo"Error";
+    
+    }
+    else{
+      ?>
+    <div class="alert alert-danger" role="alert">
+        Please fill all field !
+    </div>
+    <?php
+    }}
+  $result_noc = pg_query($conn,"SELECT * FROM applicatio WHERE action='Pending' AND form_type='NOC' ORDER BY apply_date DESC ;");
   $pending=pg_num_rows($result_noc);
-  $result_grivence = pg_query($conn,"SELECT * FROM applicatio WHERE action='pending'AND form_type='grivence'");
+  $result_grivence = pg_query($conn,"SELECT * FROM applicatio WHERE action='Pending' AND form_type='GRIEVENCE' ORDER BY apply_date DESC ;");
   $pending_grivence=pg_num_rows($result_grivence);
-  $result_obj = pg_query($conn,"SELECT * FROM applicatio WHERE action='pending' AND form_type='objection'");
+  $result_obj = pg_query($conn,"SELECT * FROM applicatio WHERE action='Pending' AND form_type='OBJECTION' ORDER BY apply_date DESC ;");
   $pending_obj=pg_num_rows($result_obj);
-  echo $pending;
+
   ?>
     <div id=cont class="flex-column ">
-        <div class="d-flex p-2 border border-1 justify-content-evenly  w-100 mb-auto" style="top:100">
-            <button type="button" class="btn btn-success px-4" onclick="nocf()"
+        <div class="d-flex p-2  justify-content-evenly bg-dark w-100 mb-auto" style="top:100">
+            <button type="button" class="btn btn-warning px-4" onclick="nocf()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 NOC
             </button>
-            <button type="button" class="btn btn-success" onclick="grievencef()"
+            <button type="button" class="btn btn-warning" onclick="grievencef()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 GRIEVIENCE
             </button>
-            <button type="button" class="btn btn-success" onclick="objectionf()"
+            <button type="button" class="btn btn-warning" onclick="objectionf()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 OBJECTION
             </button>
@@ -65,10 +93,19 @@ if (pg_num_rows($result_noc) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_noc['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td></td>
+                            <td><?php $stDate = date("d-m-Y", strtotime($row_noc['status_update_date']));  
+    if($stDate=='01-01-1970'){
+        echo "";
+    }else{
+        echo $stDate;
+    }   ?></td>
                             <td><?php echo $row_noc['action'];?></td>
-                            <td><button type="button" class="btn btn-success">Approved</button></td>
-                            <td><button type="button" class="btn btn-danger px-4">Reject</button></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_noc['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success">Approved</button></a></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_noc['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger px-4">Reject</button></a></td>
                         </tr>
                         <?php
             $i++;
@@ -111,10 +148,19 @@ if (pg_num_rows($result_grivence) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_gri['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td></td>
+                            <td><?php $stDate = date("d-m-Y", strtotime($row_gri['status_update_date']));  
+    if($stDate=='01-01-1970'){
+        echo "";
+    }else{
+        echo $stDate;
+    };   ?></td>
                             <td><?php echo $row_gri['action'];?></td>
-                            <td><button type="button" class="btn btn-success">Approved</button></td>
-                            <td><button type="button" class="btn btn-danger px-4">Reject</button></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_gri['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success">Approved</button></a></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_gri['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger px-4">Reject</button></a></td>
                         </tr>
                         <?php
             $i++;
@@ -157,10 +203,19 @@ if (pg_num_rows($result_obj) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_obj['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td></td>
+                            <td><?php $stDate = date("d-m-Y", strtotime($row_obj['status_update_date']));  
+    if($stDate=='01-01-1970'){
+        echo "";
+    }else{
+        echo $stDate;
+    }   ?></td>
                             <td><?php echo $row_obj['action'];?></td>
-                            <td><button type="button" class="btn btn-success">Approved</button></td>
-                            <td><button type="button" class="btn btn-danger px-4">Reject</button></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_obj['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success">Approved</button></a></td>
+                            <td><a
+                                    href="status.php?application_no=<?php echo $row_obj['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger px-4">Reject</button></a></td>
                         </tr>
                         <?php
             $i++;
@@ -182,29 +237,30 @@ if (pg_num_rows($result_obj) > 0) {
 
     </div>
     <script>
-
     let noc = document.getElementById("noc");
     let grievence = document.getElementById("grievence");
     let objection = document.getElementById("objection");
     console.log(noc);
     console.log(grievence);
     console.log(objection);
-    function nocf(){
+
+    function nocf() {
         grievence.style.display = "none";
         objection.style.display = "none";
         noc.style.display = "flex";
     }
-    function grievencef(){
+
+    function grievencef() {
         objection.style.display = "none";
         noc.style.display = "none";
         grievence.style.display = "flex";
     }
-    function objectionf(){
+
+    function objectionf() {
         grievence.style.display = "none";
         noc.style.display = "none";
         objection.style.display = "flex";
     }
-  
     </script>
 
     <?php
