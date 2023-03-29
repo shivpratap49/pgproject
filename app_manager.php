@@ -41,22 +41,24 @@ require_once('admin_session.php');
  $obj_all=pg_num_rows($result10);
   ?>
     <div id="cont">
+        
         <div class="row w-75 justify-content-between">
             <div class="col-4">
-                <div class="card h-100">
+                <a href="reportgenration.php" style="text-decoration:none">
+                    <div class="card h-100 link-dark">
 
-                    <div class="card-body">
-                        <h5 class="card-title text-center">ALL APPLICATION</h5>
-                        <hr>
-                        <p class="text-center">NOC All Application : <?php  echo $noc_all ;?></p>
-                            <p class="text-center">GRIEVENCE All Application : <?php echo $gri_all ;?></p>
-                            <p class="text-center">OBJECTION All Application : <?php echo $obj_all;?></p>
-
+                        <div class="card-body">
+                            <h5 class="card-title text-center">ALL APPLICATION</h5>
+                            <hr>
+                            <p class="">NOC All Application : <?php  echo $noc_all ;?></p>
+                            <p class="">GRIEVENCE All Application : <?php echo $gri_all ;?></p>
+                            <p class="">OBJECTION All Application : <?php echo $obj_all;?></p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+                </a>
             </div>
             <div class="col-4">
                 <a href="status.php" style="text-decoration:none">
@@ -64,9 +66,9 @@ require_once('admin_session.php');
                         <div class="card-body">
                             <h5 class="card-title text-center">ALL PENDING</h5>
                             <hr>
-                            <p class="text-center">NOC Pendig Application : <?php  echo $noc_pending ;?></p>
-                            <p class="text-center">GRIEVENCE Pendig Application : <?php echo $gri_pending ;?></p>
-                            <p class="text-center">OBJECTION Pending Application : <?php echo $obj_pending;?></p>
+                            <p class="">NOC Pendig Application : <?php  echo $noc_pending ;?></p>
+                            <p class="">GRIEVENCE Pendig Application : <?php echo $gri_pending ;?></p>
+                            <p class="">OBJECTION Pending Application : <?php echo $obj_pending;?></p>
 
                         </div>
                         <div class="card-footer">
@@ -81,10 +83,10 @@ require_once('admin_session.php');
                     <div class="card-body">
                         <h5 class="card-title text-center">ALL APPLICATION STATUS</h5>
                         <hr>
-                        <p class="text-center">Total Application : <?php echo $all_application;?></p>
-                        <p class="text-center">Total Pendig Application : <?php  echo $pending ;?></p>
-                        <p class="text-center">Total Approved Application : <?php echo $accepted ;?></p>
-                        <p class="text-center">Total Rejected Application : <?php echo $rejected;?></p>
+                        <p class="">Total Application : <?php echo $all_application;?></p>
+                        <p class="">Total Pendig Application : <?php  echo $pending ;?></p>
+                        <p class="">Total Approved Application : <?php echo $accepted ;?></p>
+                        <p class="">Total Rejected Application : <?php echo $rejected;?></p>
 
                     </div>
                     <div class="card-footer">

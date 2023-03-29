@@ -118,7 +118,7 @@ $pass=$_SESSION['dob'];
                     <th colspan="12" class="text-center fs-2 "> Senior Driver Gradation list</th>
                 </tr>
                 <tr>
-                    <th scope="col">Sl no.</th>
+                    <th scope="col">Gradation Sl no.</th>
                     <th scope="col">Name of the Driver </th>
                     <th scope="col">Date of Birth </th>
                     <th scope="col">Caste/ Category</th>
@@ -202,7 +202,7 @@ $pass=$_SESSION['dob'];
                                 <th colspan="12" class="text-center fs-2 "> Head Driver Gradation list</th>
                             </tr>
                             <tr>
-                                <th scope="col">Sl no.</th>
+                                <th scope="col">Gradation Sl no.</th>
                                 <th scope="col">Name of the Driver </th>
                                 <th scope="col">Date of Birth </th>
                                 <th scope="col">Caste/ Category</th>
@@ -288,7 +288,7 @@ $pass=$_SESSION['dob'];
                                         </tr>
                                         <tr>
                                         <tr>
-                                            <th scope="col">SL NO.</th>
+                                            <th scope="col">Gradation SL NO.</th>
                                             <th scope="col">Name </th>
                                             <th scope="col">Date of Birth </th>
                                             <th scope="col">Caste/ Category</th>
@@ -388,7 +388,7 @@ $pass=$_SESSION['dob'];
                                                     </tr>
                                                     <tr>
                                                     <tr>
-                                                        <th scope="col">SL NO.</th>
+                                                        <th scope="col">Gradation SL NO.</th>
                                                         <th scope="col">Name </th>
                                                         <th scope="col">Date of Birth </th>
                                                         <th scope="col">Caste/ Category</th>
@@ -488,7 +488,7 @@ $pass=$_SESSION['dob'];
                                                                         Inspector Gradation list</th>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="col">SL NO.</th>
+                                                                    <th scope="col">Gradation SL NO.</th>
                                                                     <th scope="col">Name </th>
                                                                     <th scope="col">Date of Birth </th>
                                                                     <th scope="col">Caste/ Category</th>
@@ -589,7 +589,7 @@ $pass=$_SESSION['dob'];
                                                                                     Supervisor Gradation list</th>
                                                                             </tr>
                                                                             <tr>
-                                                                                <th scope="col">SL NO.</th>
+                                                                                <th scope="col">Gradation SL NO.</th>
                                                                                 <th scope="col">Name </th>
                                                                                 <th scope="col">Date of Birth </th>
                                                                                 <th scope="col">Caste/ Category</th>
@@ -703,7 +703,7 @@ $pass=$_SESSION['dob'];
                                                                                                 Gradation list</th>
                                                                                         </tr>
                                                                                         <tr>
-                                                                                            <th scope="col">SL NO.
+                                                                                            <th scope="col">Gradation SL NO.
                                                                                             </th>
                                                                                             <th scope="col">Name
                                                                                             </th>
@@ -843,7 +843,7 @@ $pass=$_SESSION['dob'];
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="col">
-                                                                                                            SL NO.
+                                                                                                            Gradation SL NO.
                                                                                                         </th>
                                                                                                         <th scope="col">
                                                                                                             Name

@@ -1,6 +1,11 @@
 <div class="container-xlg bg-primary" >
-  <footer class="py-3 mt-5">
-   
+  <footer class="py-3 mt-5" >
+  <div style="">
+    <div style="width: 0; background-color: blue; margin: auto;">
+    <button class="btn btn-danger m-1" onclick="history.back()">Back</button>
+    </div>
+</div>
+ 
     <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-light">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Employee Login Portal</a></li>
