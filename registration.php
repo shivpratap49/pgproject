@@ -148,7 +148,7 @@ require_once('admin_session.php');
             </div>
         </div>
         <div class="container" id=driverapp style="display:none">
-            <form action="registration.php" method="post" onsubmit="return valid()" name="form">
+            <form action="registration.php" method="post" onsubmit="return drivervalidate()" name="driverform">
                 <div class="container-sm border border-dark mt-5 ">
 
                     <h2 class="text-center"><span>Driver Registration form </span>
@@ -161,7 +161,8 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="text" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp">
+                            <input type="text" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="erslno">*Plese fill this field
+                                </span>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">Employee Code :</p>
@@ -169,7 +170,7 @@ require_once('admin_session.php');
                         <div class="col-3">
 
                             <input type="text" name="employee_code" class="form-control" id="name"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="eremployeecode">*Plese fill this field</span>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -178,7 +179,7 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
                             <p> <input type="name" name="employee_name" class="form-control" id="name"
-                                    aria-describedby="emailHelp"></p>
+                                    aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="eremployeename">*Plese fill this field</span></p>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">DOB :</p>
@@ -264,12 +265,12 @@ require_once('admin_session.php');
                         <div class="col-3">
                             <p class="mb-0"><select class="form-select" id="specificSizeSelectn" name="present_grade"
                                     style="width: 200px;">
-                                    <option selected disabled>Choose...</option>
+                                    <option selected disabled value="">Choose...</option>
                                     <option value="Head Driver">Head Driver</option>
                                     <option value="Senior Driver">Senior Driver </option>
                                     <option value="Junior Driver">Junior Driver</option>
 
-                                </select></p>
+                                </select></p><span class="text-danger " style="font:size 8px; display:none" id="erpresentgrade"> *Plese fill this field</span>
                         </div>
                         <div style="width: 0; margin: auto;">
 
@@ -288,7 +289,7 @@ require_once('admin_session.php');
 
 
         <div class="container" id=ministryapp style="display:none">
-            <form action="registration.php" method="post" onsubmit="return valid()" name="form">
+            <form action="registration.php" method="post" onsubmit="return ministryvalid()" name="ministryform">
                 <div class="container-sm border border-dark mt-5 ">
 
                     <h2 class="text-center"><span>Ministry Registration form </span>
@@ -301,7 +302,7 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="name" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp">
+                            <input type="name" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="erslnom">*Plese fill this field</span>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">Employee Code :</p>
@@ -309,7 +310,7 @@ require_once('admin_session.php');
                         <div class="col-3">
 
                             <input type="name" name="employee_code" class="form-control" id="name"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="eremployeecodem">*Plese fill this field</span>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -318,7 +319,7 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
                             <p> <input type="name" name="employee_name" class="form-control" id="name"
-                                    aria-describedby="emailHelp"></p>
+                                    aria-describedby="emailHelp"></p><span class="text-danger " style="font:size 8px; display:none" id="eremployeenamem">*Plese fill this field</span>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">DOB :</p>
@@ -419,12 +420,12 @@ require_once('admin_session.php');
                         <div class="col-3">
                             <p class="mb-0"><select class="form-select" id="specificSizeSelectn" name="present_post"
                                     style="width: 200px;">
-                                    <option selected disabled>Choose...</option>
+                                    <option selected disabled value="">Choose...</option>
                                     <option value="Section Officer">SECTION OFFICERS</option>
                                     <option value="Senior Revenue Assistant">SENIOR REVENUE ASSISTANTS</option>
                                     <option value="Junior Revanue Assistant">JUNIOR REVENUE ASSISTANTS</option>
 
-                                </select></p>
+                                </select></p><span class="text-danger " style="font:size 8px; display:none" id="erpostm">*Plese fill this field</span>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -466,7 +467,7 @@ require_once('admin_session.php');
             </form>
         </div>
         <div class="container" id=revenueapp style="display:none">
-            <form action="registration.php" method="post" onsubmit="return valid()" name="form">
+            <form action="registration.php" method="post" onsubmit="return revenuevalid()" name="revenueform">
                 <div class="container-sm border border-dark mt-5 ">
 
                     <h2 class="text-center"><span>Revenue Registration form </span>
@@ -479,7 +480,7 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="name" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp">
+                            <input type="name" name="sl_no" class="form-control" id="name" aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="erslnor">*Plese fill this field</span>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">Employee Code :</p>
@@ -487,7 +488,7 @@ require_once('admin_session.php');
                         <div class="col-3">
 
                             <input type="name" name="employee_code" class="form-control" id="name"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="eremployeecoder">*Plese fill this field</span>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -496,7 +497,7 @@ require_once('admin_session.php');
                         </div>
                         <div class="col-sm-3">
                             <p> <input type="name" name="employee_name" class="form-control" id="name"
-                                    aria-describedby="emailHelp"></p>
+                                    aria-describedby="emailHelp"><span class="text-danger " style="font:size 8px; display:none" id="eremployeenamer">*Plese fill this field</span></p>
                         </div>
                         <div class="col-3">
                             <p class="mb-0">DOB :</p>
@@ -608,13 +609,13 @@ require_once('admin_session.php');
                         <div class="col-3">
                             <p class="mb-0"><select class="form-select" id="specificSizeSelectn" name="present_post"
                                     style="width: 200px;">
-                                    <option selected disabled>Choose...</option>
+                                    <option selected disabled value="">Choose...</option>
                                     <option value="Revenue Inspector">REVENUE INSPECTOR</option>
                                     <option value="Revenue Supervisor">REVENUE SUPERVISOR</option>
                                     <option value="AMIN">AMIN</option>
                                     <option value="Assistant Revenue Inspector">ASSISTANT REVENUE INSPECTOR</option>
 
-                                </select></p>
+                                </select></p><span class="text-danger " style="font:size 8px; display:none" id="erpostr">*Plese fill this field</span>
                         </div>
                         <div>
 
@@ -657,19 +658,113 @@ require_once('admin_session.php');
             driver.style.display = "none";
             revenue.style.display = "inline";
         }
-        /*let whats_er = document.getElementById("advt_no");
-        let ad_er = document.getElementById("board");
-        if (exam == "") {
-            ad_er.style.display = "inline";
-            return false;
-        } else if (advt=="") {
-            mob_er.style.display = "inline";
-            return false;
-        } else if (board=="") {
-            whats_er.style.display = "inline";
-            return false;
-        }*/
+  
     }
+    function drivervalidate() {
+
+let sl_no = document.forms["driverform"]["sl_no"].value;
+let emp_code = document.forms["driverform"]["employee_code"].value;
+let emp_name= document.forms["driverform"]["employee_name"].value;
+let present_post = document.forms["driverform"]["present_grade"].value;
+let  ersl= document.getElementById("erslno");
+let  ername= document.getElementById("eremployeename");
+let  ercode= document.getElementById("eremployeecode");
+let erpresentgrade = document.getElementById("erpresentgrade");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+}else{
+    ersl.style.display = "none";
+}  
+ if ( emp_code=="") {
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name=="") {
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if (present_post =="") {
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade.style.display = "none";
+} 
+}
+function ministryvalid() {
+
+let sl_no = document.forms["ministryform"]["sl_no"].value;
+let emp_code = document.forms["ministryform"]["employee_code"].value;
+let emp_name= document.forms["ministryform"]["employee_name"].value;
+let present_post = document.forms["ministryform"]["present_post"].value;
+let  ersl= document.getElementById("erslnom");
+let  ername= document.getElementById("eremployeenamem");
+let  ercode= document.getElementById("eremployeecodem");
+let erpresentgrade = document.getElementById("erpostm");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+} else{
+    ersl.style.display = "none";
+} 
+ if ( emp_code=="") {
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name=="") {
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if (present_post =="") {
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade .style.display = "none";
+} 
+}
+function revenuevalid() {
+
+let sl_no = document.forms["revenueform"]["sl_no"].value;
+let emp_code = document.forms["revenueform"]["employee_code"].value;
+let emp_name= document.forms["revenueform"]["employee_name"].value;
+let present_post = document.forms["revenueform"]["present_post"].value;
+let  ersl= document.getElementById("erslnor");
+let  ername= document.getElementById("eremployeenamer");
+let  ercode= document.getElementById("eremployeecoder");
+let erpresentgrade = document.getElementById("erpostr");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+}else{
+    ersl.style.display = "none";
+} 
+ if ( emp_code=="") {
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name=="") {
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if (present_post =="") {
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade.style.display = "none";
+} 
+}
     </script>
 
     <?php
