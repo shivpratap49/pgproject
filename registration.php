@@ -673,22 +673,23 @@ let erpresentgrade = document.getElementById("erpresentgrade");
 if (sl_no == "") {
     ersl.style.display = "inline";
     return false;
-}else{
-    ersl.style.display = "none";
+}else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
 }  
- if ( emp_code=="") {
+ if ( emp_code==""){
     ercode.style.display = "inline";
     return false;
 }else{
     ercode.style.display = "none";
 } 
- if (emp_name=="") {
+ if (emp_name==""){
     ername.style.display = "inline";
     return false;
 }else{
     ername.style.display = "none";
 } 
-if (present_post =="") {
+if(present_post ==""){
     erpresentgrade .style.display = "inline";
     return false;
 }else{
@@ -708,8 +709,9 @@ let erpresentgrade = document.getElementById("erpostm");
 if (sl_no == "") {
     ersl.style.display = "inline";
     return false;
-} else{
-    ersl.style.display = "none";
+} else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
 } 
  if ( emp_code=="") {
     ercode.style.display = "inline";
@@ -743,10 +745,11 @@ let erpresentgrade = document.getElementById("erpostr");
 if (sl_no == "") {
     ersl.style.display = "inline";
     return false;
-}else{
-    ersl.style.display = "none";
-} 
- if ( emp_code=="") {
+}else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
+}  
+ if( emp_code=="") {
     ercode.style.display = "inline";
     return false;
 }else{
