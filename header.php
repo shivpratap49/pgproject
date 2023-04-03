@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg text-light bg-primary m-0">
+<header> <nav class="navbar navbar-expand-lg text-light bg-primary m-0">
     <div class="  ms-1">
       <a class="navbar-brand m-0" href="#">
         <img src="images/EmblemN.png" alt="Bootstrap" width="60" height="50">
@@ -29,3 +29,4 @@
       window.location="logout.php"
     }
   </script>
+  </header>

@@ -18,7 +18,7 @@ require_once('config.php');
 require_once('admin_session.php');
   include('header.php');
   ?>
-    <div>
+    <div id=cont>
 
     </div>
     <?php

@@ -68,7 +68,7 @@ require_once('admin_session.php');
                 OBJECTION
             </button>
         </div>
-        <div class="  justify-content-center w-75 border border-4 mb-auto" id="noc" style="display:none">
+        <div class="  justify-content-center w-75  mb-auto" id="noc" style="display:none">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <table class="table">
                     <thead>
@@ -89,9 +89,10 @@ if (pg_num_rows($result_noc) > 0) {
     ?>
 
                         <tr>
-                            <th scope="row"><?php echo $row_noc['application_no']?></th>
-                            <td><?php $newDate = date("d-m-Y", strtotime($row_noc['apply_date']));  
-    echo $newDate;   ?></td>
+                            <th scope="row"><a
+                                    href="viewapp.php?application_no=<?php echo $row_noc['application_no']?>& form=noc"><?php echo $row_noc['application_no']?></a></th>
+                            <td><?php $newDate = date("d-m-Y", strtotime($row_noc['apply_date'])); 
+                             echo $newDate;   ?></td>
 
                             <td><?php $stDate = date("d-m-Y", strtotime($row_noc['status_update_date']));  
     if($stDate=='01-01-1970'){
@@ -123,7 +124,7 @@ if (pg_num_rows($result_noc) > 0) {
                 </table>
             </div>
         </div>
-        <div class="  justify-content-center w-75 border border-4 mb-auto" id="grievence" style="display:none">
+        <div class="  justify-content-center w-75  mb-auto" id="grievence" style="display:none">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <table class="table">
                     <thead>
@@ -144,7 +145,8 @@ if (pg_num_rows($result_grivence) > 0) {
     ?>
 
                         <tr>
-                            <th scope="row"><?php echo $row_gri['application_no']?></th>
+                            <th scope="row"><a
+                                    href="viewapp.php?application_no=<?php echo $row_gri['application_no']?>& form=gri"><?php echo $row_gri['application_no']?></a></th>
                             <td><?php $newDate = date("d-m-Y", strtotime($row_gri['apply_date']));  
     echo $newDate;   ?></td>
 
@@ -178,7 +180,7 @@ if (pg_num_rows($result_grivence) > 0) {
                 </table>
             </div>
         </div>
-        <div class="  justify-content-center w-75 border border-4 mb-auto" id="objection" style="display:none">
+        <div class="  justify-content-center w-75 mb-auto" id="objection" style="display:none">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <table class="table">
                     <thead>
@@ -199,7 +201,8 @@ if (pg_num_rows($result_obj) > 0) {
     ?>
 
                         <tr>
-                            <th scope="row"><?php echo $row_obj['application_no']?></th>
+                        
+                        <th scope="row"><a href="viewapp.php?application_no=<?php echo $row_obj['application_no']?>& form=obj"><?php echo $row_obj['application_no']?></a></th>
                             <td><?php $newDate = date("d-m-Y", strtotime($row_obj['apply_date']));  
     echo $newDate;   ?></td>
 

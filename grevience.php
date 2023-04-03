@@ -39,7 +39,7 @@ date_default_timezone_set("Asia/Kolkata");
   $time=date("h:i:s");
   $application_no="G-".str_replace("/","","$date").str_replace(":","","$time");
   if(($exam!="" && $advt!="")){
-  $sql = "INSERT INTO applicatio (application_no,employee_code,exam_name,advt_no,form_type,action,apply_date) VALUES ('$application_no', '$user', '$exam', '$advt','$form_type','Pending','$date');";
+  $sql = "INSERT INTO applicatio (application_no,employee_code,exam_name,advt_no,form_type,action,apply_date,able) VALUES ('$application_no', '$user', '$exam', '$advt','$form_type','Pending','$date','$table');";
 if(pg_query($conn,$sql))
 {?>
     <div class="alert alert-success" role="alert">

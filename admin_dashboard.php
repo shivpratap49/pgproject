@@ -20,17 +20,17 @@ require_once('admin_session.php');
   ?>
     <div id="cont">
 
-        <div class=" d-flex w-75 justify-content-evenly border border border-2 border-dark bg-primary rounded-4   ">
+        <div class=" d-flex w-75 justify-content-evenly    ">
 
-            <div class="m-3 p-3 d-flex flex-column align-items-center border border-2  rounded-2 border-dark w-25 "><p>New Registraion of Employee</p>
+            <div class="m-3 p-3 d-flex flex-column align-items-center border border-2  bg-primary rounded-2 border-dark w-25 "><p class="text-white">New Registraion of Employee</p>
 
             <a href="registration.php"><button type="button" class="btn btn-warning mx-5" >Click here</button></a>
             </div>
-            <div class="m-3 p-3 d-flex flex-column align-items-center border rounded-2 border-2 border-dark w-25"><p>Reset Password of Employee</p>
+            <div class="m-3 p-3 d-flex flex-column align-items-center border rounded-2 border-2 bg-primary border-dark w-25"><p class="text-white">Reset Password of Employee</p>
             <a href="re_pass.php"> <button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
                 
             </div>
-            <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center border border-2 border-dark w-25"><p>Application Manager</p>
+            <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25"><p class="text-white">Application Manager</p>
               
             <a href="app_manager.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>

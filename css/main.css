@@ -2,3 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
+@media print {
+    header, footer, aside, form,nav {
+      display: none;
+    }
+    body {
+      font-size: 8px;
+    }
+  }
