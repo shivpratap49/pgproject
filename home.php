@@ -15,6 +15,21 @@ $row = pg_fetch_array($result);
     <title>dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
    <link href="css/main.css" rel="stylesheet">
+   <style>
+     .new{
+        width:50%
+     }
+      @media screen and (max-width: 600px) {
+        .new {
+            width: 100%;
+
+            background-color: green;
+        }
+
+        
+
+    }
+   </style>
   </head>
   <body>
  <?php
@@ -22,7 +37,7 @@ include('header.php')
 ?>
 
     <h1 style="text-align:center;"> Welcome: <?php echo $row["name"];?></h1>
-    <div class=" container bg-dark justify-content-center text-light border border-2 border-warning align-item-center  p-0 w" style="width: 768px; vertical-align: middle; margin-top:20vh">
+    <div class=" container new bg-dark justify-content-center text-light border border-2 border-warning align-item-center  p-0 w" style=" vertical-align: middle; margin-top:20vh">
         
         <div class="container justify-content-center border border border-2 border-success  ">
             <div class="d-flex justify-content-center p-0">

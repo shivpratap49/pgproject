@@ -1,19 +1,31 @@
-<div class="container-xlg bg-primary" >
+<div class="container-xlg bg-dark" >
   <footer class="py-3 mt-5" >
-  <div style="">
-    <div style="width: 0; background-color: blue; margin: auto;">
+  
+    <div class="d-flex w-100 justify-content-center ">
     <button class="btn btn-danger m-1" onclick="history.back()">Back</button>
     </div>
-</div>
- 
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-light">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Employee Login Portal</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Admin Login Portal</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Help</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Contact us</a></li>
+    <ul class="text-white d-flex justify-content-center " style="list-style-type: none;">
+      <li class="px-2">Website Policies</li>
+      <li class="px-2">/</li>
+      <li class="px-2">Help</li>
+      <li class="px-2">/</li>
+      <li class="px-2">Contact Us</li>
+      <li class="px-2">/</li>
+      <li class="px-2">Feedback</li>
     </ul>
-    <p class="text-center text-light">&copy; 2023 NIC CUTTACK</p>
+    <div class="d-flex w-100 justify-content-center ">
+      <ul class="text-white d-flex justify-content-center flex-column align-items-center  " style="list-style-type: none; font-size:13px;">
+      <li class="my-1">Content Owned by District Administration</li>
+      <li class="my-1">© Cuttack , Developed and hosted by National Informatics Centre,
+</li>
+      <li class="my-1">Ministry of Electronics & Information Technology, Government of India</li>
+</ul>
+    </div>
+    <div class="d-flex w-100 justify-content-center">
+      <img src="images/sw.png" alt="" class="mx-2">
+      <img src="images/niclogo.png" alt="" class="mx-2">
+      <img src="images/digitalindia.png" alt=""class="mx-2">
+    </div>
   </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

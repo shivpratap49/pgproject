@@ -17,6 +17,7 @@
 require_once('config.php');
 require_once('admin_session.php');
   include('header.php');
+  $up=false;
   if(isset($_GET["application_no"])){
     $uaction=($_GET['status']);
     $app=($_GET["application_no"]);
@@ -27,12 +28,10 @@ require_once('admin_session.php');
     if (!$uaction==""&& !$app==""){
     $sql = "UPDATE applicatio SET action='$uaction', status_update_date='$date' WHERE application_no='$app' ";
     if(pg_query($conn,$sql))
-    { ?>
-    <div class="alert alert-success" role="alert">
-        Application Status updated Successfully.
-    </div>
-    <?php 
-        
+    {
+    
+    
+        $up=true;
     }
     else
     echo"Error";
@@ -68,6 +67,9 @@ require_once('admin_session.php');
                 OBJECTION
             </button>
         </div>
+       <?php if($up){?><div class="alert alert-success mb-auto" role="alert">
+        Application Status updated Successfully.
+    </div><?php } ?>
         <div class="  justify-content-center w-75  mb-auto" id="noc" style="display:none">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <table class="table">

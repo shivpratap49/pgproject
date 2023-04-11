@@ -203,12 +203,16 @@ $row2 = pg_fetch_array($result2);
                 </div>
                 <input type="hidden" id="custId" name="form_type" value="NOC">
                 <div class="row p-2 mt-5">
-                    <div class="col-10">
+                    <div class="col-5">
                         <p class="mb-0"> </p>
                     </div>
                     <div class="col-auto ms-3">
-                        <button type="submit" name="submit" value="submit" class="btn btn-success">Send
-                            Application</button>
+                    <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success">Approved</button></a>
+                                        <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger px-4">Reject</button></a>
                     </div>
                 </div>
             </div>
@@ -225,15 +229,12 @@ $row2 = pg_fetch_array($result2);
                 <hr>
                 <div class="mt-5 p-5">
                     <label for="formGroupExampleInput " class=" d-inline">SUBJECT : </label>
-                    <input type="text" name="advt_no" class="form-control shadow bg-body rounded d-inline w-75"
-                        id="formGroupExampleInput" placeholder="Enter Subject here !">
+                    <div class="  bg-body  d-inline w-75"><b><?php echo $row['advt_no'];?></b>
+                        </div>
                 </div>
                 <div class="form w-80 mt-5 p-5">
                     <label for="floatingTextarea2" class="  d-inline">Describe your reason </label>
-                    <textarea class="form-control shadow bg-body rounded d-inline mb-5 ms-5 me-5"
-                        placeholder="Enter Your Reason here !" name="exam_name" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
-                    <input type="hidden" id="custId" name="form_type" value="OBJECTION">
+                    <div class="  bg-body  d-inline mb-5 ms-5 me-5 " style="height: 100px"><p><?php echo $row['exam_name'];?></p></div>
                 </div>
                 <div class="row p-2">
                     <div class="col-8">
@@ -277,8 +278,12 @@ $row2 = pg_fetch_array($result2);
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" name="submit" value="submit" class="btn btn-success mb-3">Send
-                        Application</button>
+                <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success m-3">Approved</button></a>
+                                        <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger m-3 px-4">Reject</button></a>
                 </div>
             </div>
     </div>
@@ -292,15 +297,14 @@ $row2 = pg_fetch_array($result2);
                     <h2 class="text-center mt-3"> APPLICATION </h2>
                     <hr>
                     <div class="mt-5 p-5">
-                        <label for="formGroupExampleInput " class=" d-inline">SUBJECT   :  </label>
-                        <input type="text" name="advt_no"class="form-control shadow bg-body rounded d-inline w-75" id="formGroupExampleInput"
-                            placeholder="Enter Subject here !">
+                        <label for=" " class=" d-inline">SUBJECT   :  </label>
+                        <div class="  bg-body  d-inline w-75"><b><?php echo $row['advt_no'];?></b>
+                        </div>
                     </div>
                     <div class="form w-80 mt-5 p-5">
-                        <label for="floatingTextarea2" class="  d-inline">Describe your reason </label>
-                        <textarea class="form-control shadow bg-body rounded d-inline mb-5 ms-5 me-5" placeholder="Enter Your Reason here !" name="exam_name"
-                            id="floatingTextarea2" style="height: 100px"></textarea>
-                            <input type="hidden" id="custId" name="form_type" value="GRIEVENCE">
+                        <label for="floatingTextarea2" class="  d-inline">Describe your reason :-</label>
+                        <div class="  bg-body  d-inline mb-5 ms-5 me-5 " style="height: 100px"><p><?php echo $row['exam_name'];?></p></div>
+                        
                     </div>
                     <div class="row p-2">
                         <div class="col-8">
@@ -344,8 +348,12 @@ $row2 = pg_fetch_array($result2);
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                    <button type="submit" name="submit" value="submit" class="btn btn-success mb-3">Send
-                            Application</button></div>
+                    <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Approved"><button
+                                        type="button" class="btn btn-success m-3 ">Approved</button></a>
+                                        <a
+                                    href="status.php?application_no=<?php echo $row['application_no']?>& status=Rejected"><button
+                                        type="button" class="btn btn-danger m-3 px-4">Reject</button></a></div>
                 </div>
         </div>
     <?php
