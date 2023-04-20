@@ -12,6 +12,21 @@
     body {
         height: 100vh;
     }
+    
+    @media screen and (max-width: 600px) {
+        #application{
+            font-size:10px;
+            
+        
+    }   
+    table{
+            font-size:9px;
+            
+        
+    }
+
+       
+    }
     </style>
 </head>
 
@@ -77,7 +92,7 @@ else{
         </div>
         <div class=" justify-content-center" id="preapp" style="display:none">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
-                <table class="table">
+                <table class="table w-100">
                     <thead>
                         <tr>
                             <th scope="col">Application No.</th>

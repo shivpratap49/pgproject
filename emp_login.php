@@ -80,9 +80,9 @@ else{
  }
 }
  ?>
-    <div style="min-height:80vh display:flex; ">
+    <div style="min-height:80vh; display:flex;">
 
-        <div class="d-flex justify-content-center border me-auto ms-auto border-warning border-4 bg-dark bg-opacity-50  rounded-4 new"
+        <div class="d-flex justify-content-center border me-auto ms-auto border-warning border-4 bg-dark bg-opacity-25  rounded-4 new"
             style=" margin-top:9rem" id="boxlog">
 
 
@@ -90,7 +90,7 @@ else{
                 <div class="d-flex justify-content-center me-auto ms-auto mt-2 w-100 input">
                     <div class="input me-2" style="  width: 48.333%; display: inline-block; ">
                         <label class="form-label text-dark" for="specificSizeSelect">DEPARTMENT</label>
-                        <select class="form-select" id="specificSizeSelectn" name="table" >
+                        <select class="form-select" id="specificSizeSelectn" name="table">
                             <option selected disabled>Choose...</option>
                             <option value="driver">DRIVER STAFF</option>
                             <option value="revenue">REVENUE STAFF</option>
@@ -100,8 +100,7 @@ else{
                     </div>
                     <div class="input" style="  width: 48.333%; display: inline-block;">
                         <label class="form-label text-dark" for="specificSizeSelect"> POST</label>
-                        <select class="form-select" id="specificSizeSelecta" name="present_post_grade"
-                            >
+                        <select class="form-select" id="specificSizeSelecta" name="present_post_grade">
                             <option selected disabled>Choose...</option>
 
                         </select>

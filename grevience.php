@@ -9,6 +9,22 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <style>
+         @media screen and (max-width: 600px) {
+        #application{
+            font-size:10px;
+            
+        
+    }   
+    table{
+            font-size:9px;
+            
+        
+    }
+
+       
+    }
+    </style>
 </head>
 
 <body style="background-color: #eee;">

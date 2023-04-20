@@ -1,8 +1,9 @@
 
   document.getElementById("specificSizeSelectn").addEventListener("change", populate);
-  function populate(){
-    var s1=document.getElementById("specificSizeSelectn");
+  var s1=document.getElementById("specificSizeSelectn");
     var s2=document.getElementById("specificSizeSelecta");
+  function populate(){
+    
     
     s2.innerHTML="";
     
