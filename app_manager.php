@@ -48,7 +48,7 @@ require_once('admin_session.php');
                     <div class="card h-100 link-dark">
 
                         <div class="card-body">
-                            <h5 class="card-title text-center">ALL APPLICATION</h5>
+                            <h5 class="card-title text-center fs-6">ALL APPLICATION AND REPORT GENRATION</h5>
                             <hr>
                             <p class="">NOC All Application : <?php  echo $noc_all ;?></p>
                             <p class="">GRIEVENCE All Application : <?php echo $gri_all ;?></p>

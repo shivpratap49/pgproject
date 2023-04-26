@@ -126,7 +126,7 @@ require_once('admin_session.php');
         Employee Regstered Successfully.
     </div>
     <?php 
-                header("location: noc.php");
+            
             }
             else
             echo"Error";

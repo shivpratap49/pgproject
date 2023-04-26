@@ -2,9 +2,39 @@
 require_once('config.php');
 $table=trim($_GET['q']);
 $post=trim($_GET['w']);
+$form=trim($_GET['p']);
 ?>
 
+
 <?php
+ $sql="SELECT*FROM applicatio WHERE form_type='$form' AND able='$table';" ;
+ $result=pg_query($conn,$sql);
+ echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> '.$form.' Application list</th></tr><tr><th scope="col">Gradation sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Applicant </th> <th scope="col">Application no. </th><th scope="col">Apply date</th><th scope="col">Approved date</th><th scope="col">Status</th><th scope="col">Application type</th><th scope="col">Present post</th> </tr>' ;
+ if (pg_num_rows($result) > 0) {
+    $i = 1;
+    while ($row = pg_fetch_array($result)) {
+    
+        $able = $row["able"];
+         $emp = $row["employee_code"];
+         $result2 = pg_query($conn, "SELECT * FROM $able where employee_code='$emp'; ");
+         $row2 = pg_fetch_array($result2);
+         
+     echo"<tr> <td> $row2[sl_no]</td><td><a href=viewapp.php?application_no=$row[application_no]&form=$row[form_type]>$row[employee_code]</a> </td>  <td> <div id='name$i'>{$row2['name']}</div></td> <td>$row[application_no] </td> <td>".date("d-m-y",strtotime($row['apply_date']))."</td> <td>".date("d-m-y",strtotime($row['status_update_date']))."</td> <td> $row[action] </td> <td> {$row['form_type']}</td><td>$row2[present_post_grade]</td></tr>";
+    
+      $i++;
+      
+    } 
+    echo"</table>";
+  } else {
+    ?>
+<table class="table table-striped">
+<tr>
+    <th scope="col" style="text-align:center">Record not found</th>
+    <?php
+  }
+ 
+ 
+/*
 if($table=='driver'&& $post!="all"){
     $sql="SELECT*FROM $table WHERE present_post_grade='$post' ORDER BY sl_no ASC;" ;
 $result=pg_query($conn,$sql);
@@ -1496,5 +1526,5 @@ $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='$post'
                                                                                                             crossorigin="anonymous">
                                                                                                         </script>
                                                                                                         <?php
-
+*/
 ?>

@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['loggedin'])||$_SESSION['loggedin']!=true){
   header("location:index.php");
 }
-if($_SESSION['username']!='Admin'){
+if(!isset($_SESSION['type'])){
     header("location:index.php");
 }
 ?>

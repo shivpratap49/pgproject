@@ -62,7 +62,7 @@
 
         if (pg_query($conn, $sql)) { ?>
             <div class="alert alert-success" role="alert">
-                Employee Regstered Successfully.
+                Employee Record updated Successfully.
             </div>
         <?php
             header("location: view_employee.php?yes=1");
@@ -71,7 +71,7 @@
     }
 
     if (isset($_POST["ministry"])) {
-
+        $table="ministry";
         $sl_no = ($_POST['sl_no']);
         $employee_code = ($_POST['employee_code']);
         $prevemployee_code = ($_POST['prevemployee_code']);
@@ -97,7 +97,7 @@
          
         if (pg_query($conn, $sql)) { ?>
             <div class="alert alert-success" role="alert">
-                Employee Regstered Successfully.
+                Employee Record Updated Successfully.
             </div>
         <?php
         header("location: view_employee.php?yes=1");
@@ -107,7 +107,7 @@
 
     if (isset($_POST["revenue"])) {
 
-
+        $table="revenue";
         $sl_no = ($_POST['sl_no']);
         $employee_code = ($_POST['employee_code']);
         $prevemployee_code = ($_POST['prevemployee_code']);
@@ -126,7 +126,7 @@
         $present_place = ($_POST['present_place']);
         $present_post = ($_POST['present_post']);
 
-        $sql = "UPDATE $table SET sl_no='$sl_no', name='$employee_name', dob='$dob', category='$category', h_block='$h_block', edn_qual='$edn', j_date_govt_service='$join_date', post_name_intial_grade='$post_name_intial_grade',  j_date_present_grade=$join_date_present_post, theory='$theory', practical='$practical', deptt_exam='$dept_exam', s_date='$s_date',present_place_of_posting='$present_place', present_post_grade='$present_post', employee_code='$employee_code'  WHERE employee_code='$prevemployee_code';";
+        $sql = "UPDATE $table SET sl_no='$sl_no', name='$employee_name', dob='$dob', category='$category', h_block='$h_block', edn_qual='$edn', j_date_govt_service='$join_date', post_name_intial_grade='$post_name_intial_grade',  j_date_present_grade='$join_date_present_post', theory='$theory', practical='$practical', deptt_exam='$dept_exam', s_date='$s_date',present_place_of_posting='$present_place', present_post_grade='$present_post', employee_code='$employee_code'  WHERE employee_code='$prevemployee_code';";
 
         
         if (pg_query($conn, $sql)) { ?>
@@ -150,7 +150,7 @@
                 <form action="edit_employee.php" method="post" onsubmit="return drivervalidate()" name="driverform">
                     <div class="container-sm border border-dark mt-5 ">
 
-                        <h2 class="text-center"><span>Driver Registration form </span>
+                        <h2 class="text-center"><span>Driver Updation Form </span>
                             <hr>
                         </h2>
 
@@ -262,12 +262,12 @@
 
                                     </select></p><span class="text-danger " style="font:size 8px; display:none" id="erpresentgrade"> *Plese fill this field</span>
                             </div>
-                            <div style="width: 0; margin: auto;">
+                            
 
-                                <div>
+                                <div class="d-flex justify-content-center">
                                     <button type="submit" name="driver" value="submit" class="btn btn-success px-3 my-3">SAVE</button>
                                 </div>
-                            </div>
+                            
                         </div>
 
 
@@ -283,7 +283,7 @@
                 <form action="edit_employee.php" method="post" onsubmit="return ministryvalid()" name="ministryform">
                     <div class="container-sm border border-dark mt-5 ">
 
-                        <h2 class="text-center"><span>Ministry Registration form </span>
+                        <h2 class="text-center"><span>Ministry Updation form </span>
                             <hr>
                         </h2>
 
@@ -400,7 +400,7 @@
                             <div class="col-3">
                                 <p class="mb-0"><select class="form-select" id="specificSizeSelectn" name="present_post" style="width: 200px;">
                                         <option value="<?php echo $row['present_post_grade']; ?>">
-                                            <?php echo $row['present_post_grade']; ?>"</option>
+                                            <?php echo $row['present_post_grade']; ?></option>
                                         <option value="Section Officer">SECTION OFFICERS</option>
                                         <option value="Senior Revenue Assistant">SENIOR REVENUE ASSISTANTS</option>
                                         <option value="Junior Revanue Assistant">JUNIOR REVENUE ASSISTANTS</option>
@@ -433,7 +433,7 @@
                             </div>
                         </div>
                         <div>
-                            <div style="width: 0; background-color: blue; margin: auto;">
+                            <div class="d-flex justify-content-center">
                                 <button type="submit" name="ministry" value="submit" class="btn btn-success px-3 my-3">Save</button>
                             </div>
                         </div>
@@ -447,7 +447,7 @@
                 <form action="edit_employee.php" method="post" onsubmit="return revenuevalid()" name="revenueform">
                     <div class="container-sm border border-dark mt-5 ">
 
-                        <h2 class="text-center"><span>Revenue Registration form </span>
+                        <h2 class="text-center"><span>Revenue Updation form </span>
                             <hr>
                         </h2>
 
@@ -576,7 +576,7 @@
                             <div class="col-3">
                                 <p class="mb-0"><select class="form-select" id="specificSizeSelectn" name="present_post" style="width: 200px;">
                                         <option value="<?php echo $row['present_post_grade']; ?>">
-                                            <?php echo $row['present_post_grade']; ?>"</option>
+                                            <?php echo $row['present_post_grade']; ?></option>
                                         <option value="Revenue Inspector">REVENUE INSPECTOR</option>
                                         <option value="Revenue Supervisor">REVENUE SUPERVISOR</option>
                                         <option value="AMIN">AMIN</option>
@@ -586,7 +586,7 @@
                             </div>
                             <div>
 
-                                <div style="width: 0; background-color: blue; margin: auto;">
+                                <div class="d-flex justify-content-center">
                                     <button type="submit" name="revenue" value="submit" class="btn btn-success px-3 my-3">SAVE</button>
                                 </div>
                             </div>
@@ -599,6 +599,117 @@
             </div>
         <?php } ?>
     </div>
+    <script>
+    
+    function drivervalidate() {
+
+let sl_no = document.forms["driverform"]["sl_no"].value;
+let emp_code = document.forms["driverform"]["employee_code"].value;
+let emp_name= document.forms["driverform"]["employee_name"].value;
+let present_post = document.forms["driverform"]["present_grade"].value;
+let  ersl= document.getElementById("erslno");
+let  ername= document.getElementById("eremployeename");
+let  ercode= document.getElementById("eremployeecode");
+let erpresentgrade = document.getElementById("erpresentgrade");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+}else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
+}  
+ if ( emp_code==""){
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name==""){
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if(present_post ==""){
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade.style.display = "none";
+} 
+}
+function ministryvalid() {
+
+let sl_no = document.forms["ministryform"]["sl_no"].value;
+let emp_code = document.forms["ministryform"]["employee_code"].value;
+let emp_name= document.forms["ministryform"]["employee_name"].value;
+let present_post = document.forms["ministryform"]["present_post"].value;
+let  ersl= document.getElementById("erslnom");
+let  ername= document.getElementById("eremployeenamem");
+let  ercode= document.getElementById("eremployeecodem");
+let erpresentgrade = document.getElementById("erpostm");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+} else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
+} 
+ if ( emp_code=="") {
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name=="") {
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if (present_post =="") {
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade .style.display = "none";
+} 
+}
+function revenuevalid() {
+
+let sl_no = document.forms["revenueform"]["sl_no"].value;
+let emp_code = document.forms["revenueform"]["employee_code"].value;
+let emp_name= document.forms["revenueform"]["employee_name"].value;
+let present_post = document.forms["revenueform"]["present_post"].value;
+let  ersl= document.getElementById("erslnor");
+let  ername= document.getElementById("eremployeenamer");
+let  ercode= document.getElementById("eremployeecoder");
+let erpresentgrade = document.getElementById("erpostr");
+if (sl_no == "") {
+    ersl.style.display = "inline";
+    return false;
+}else if(isNaN(sl_no)){
+    ersl.style.display = "inline";
+    return false;
+}  
+ if( emp_code=="") {
+    ercode.style.display = "inline";
+    return false;
+}else{
+    ercode.style.display = "none";
+} 
+ if (emp_name=="") {
+    ername.style.display = "inline";
+    return false;
+}else{
+    ername.style.display = "none";
+} 
+if (present_post =="") {
+    erpresentgrade .style.display = "inline";
+    return false;
+}else{
+    erpresentgrade.style.display = "none";
+} 
+}
+    </script>
     <?php
 
     include('footer.php');
