@@ -89,7 +89,7 @@ else{
             <form action=emp_login.php method="post">
                 <div class="d-flex justify-content-center me-auto ms-auto mt-2 w-100 input">
                     <div class="input me-2" style="  width: 48.333%; display: inline-block; ">
-                        <label class="form-label text-dark" for="specificSizeSelect">DEPARTMENT</label>
+                        <label class="form-label text-dark" for="specificSizeSelect">Employee Category</label>
                         <select class="form-select" id="specificSizeSelectn" name="table">
                             <option selected disabled>Choose...</option>
                             <option value="driver">DRIVER STAFF</option>

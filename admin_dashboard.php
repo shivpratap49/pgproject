@@ -28,7 +28,7 @@
             </div>
 
             <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
-                <p class="text-white">Application Manager</p>
+                <p class="text-white">Query Manager</p>
 
                 <a href="app_manager.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>
@@ -46,7 +46,7 @@
 
             </div>
             <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
-                <p class="text-white">Report</p>
+                <p class="text-white">Report generation</p>
 
                 <a href="report.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>

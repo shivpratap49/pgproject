@@ -2,39 +2,9 @@
 require_once('config.php');
 $table=trim($_GET['q']);
 $post=trim($_GET['w']);
-$form=trim($_GET['p']);
 ?>
 
-
 <?php
- $sql="SELECT*FROM applicatio WHERE form_type='$form' AND able='$table';" ;
- $result=pg_query($conn,$sql);
- echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> '.$form.' Application list</th></tr><tr><th scope="col">Gradation sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Applicant </th> <th scope="col">Application no. </th><th scope="col">Apply date</th><th scope="col">Approved date</th><th scope="col">Status</th><th scope="col">Application type</th><th scope="col">Present post</th> </tr>' ;
- if (pg_num_rows($result) > 0) {
-    $i = 1;
-    while ($row = pg_fetch_array($result)) {
-    
-        $able = $row["able"];
-         $emp = $row["employee_code"];
-         $result2 = pg_query($conn, "SELECT * FROM $able where employee_code='$emp'; ");
-         $row2 = pg_fetch_array($result2);
-         
-     echo"<tr> <td> $row2[sl_no]</td><td>$row[employee_code] </td>  <td> <div id='name$i'>{$row2['name']}</div></td> <td>$row[application_no] </td> <td>".date("d-m-y",strtotime($row['apply_date']))."</td> <td>".date("d-m-y",strtotime($row['status_update_date']))."</td> <td> $row[action] </td> <td> {$row['form_type']}</td><td>$row2[present_post_grade]</td></tr>";
-    
-      $i++;
-      
-    } 
-    echo"</table>";
-  } else {
-    ?>
-<table class="table table-striped">
-<tr>
-    <th scope="col" style="text-align:center">Record not found</th>
-    <?php
-  }
- 
- 
-/*
 if($table=='driver'&& $post!="all"){
     $sql="SELECT*FROM $table WHERE present_post_grade='$post' ORDER BY sl_no ASC;" ;
 $result=pg_query($conn,$sql);
@@ -46,7 +16,7 @@ $result=pg_query($conn,$sql);
         while ($row = pg_fetch_array($result)) {
           
 
-         echo"<tr> <td> $i  </td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a> </td>  <td> <div id='name$i'>{$row['name']}</div></td> <td>$row[dob] </td> <td>$row[category] </td> <td>$row[h_block] </td> <td> $row[date_of_entry_into_govt_service] </td> <td> {$row['date_of_joining_to_post_of_sr_driver']}</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td> <td>$row[present_post_grade]</td></tr>";
+         echo"<tr> <td> $i  </td><td>$row[employee_code] </td>  <td> <div id='name$i'>{$row['name']}</div></td> <td>$row[dob] </td> <td>$row[category] </td> <td>$row[h_block] </td> <td> $row[date_of_entry_into_govt_service] </td> <td> {$row['date_of_joining_to_post_of_sr_driver']}</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td> <td>$row[present_post_grade]</td></tr>";
         
           $i++;
           
@@ -80,7 +50,7 @@ $result=pg_query($conn,$sql);
 
 
 
-    echo"<tr><td>$i</td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a></td><td>$row[name]</td><td>$row[dob]></td><td>$row[category]</td><td>$row[h_block]</td><td>$row[date_of_entry_into_govt_service]</td><td>$row[date_of_joining_to_post_of_sr_driver]</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td><td>$row[present_post_grade]</td></tr>";
+    echo"<tr><td>$i</td><td>$row[employee_code]</td><td>$row[name]</td><td>$row[dob]></td><td>$row[category]</td><td>$row[h_block]</td><td>$row[date_of_entry_into_govt_service]</td><td>$row[date_of_joining_to_post_of_sr_driver]</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td><td>$row[present_post_grade]</td></tr>";
     
           $i++;
         }
@@ -112,7 +82,7 @@ $result=pg_query($conn,$sql);
                         <td>
                             <?php echo "$i"; ?>
                         </td>
-                        <td><a href='edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table?>;'><?php echo$row['employee_code']; ?></a></td>
+                        <td><?php echo$row['employee_code']; ?></td>
                         <td>
                             <?php echo $row["name"]; ?>
                         </td>
@@ -198,7 +168,7 @@ $result=pg_query($conn,$sql);
                                     <td>
                                         <?php echo "$i"; ?>
                                     </td>
-                                    <td><a href='edit_employee.php?employee=<?php echo$row['employee_code']; ?>&table=<?php echo$table ;?>'><?php echo$row['employee_code']; ?></a></td>
+                                    <td><?php echo$row['employee_code']; ?></td>
                                     <td>
                                         <?php echo $row["name"]; ?>
                                     </td>
@@ -292,7 +262,7 @@ $result=pg_query($conn,$sql);
                                                 <td>
                                                     <?php echo $row["sl_no"]; ?>
                                                 </td>
-                                                <td><a href="edit_employee.php?employee=<?php echo$row['employee_code']; ?>&table=<?php  echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                <td><?php echo$row['employee_code']; ?></td>
                                                 <td>
                                                     <?php echo $row["name"]; ?>
                                                 </td>
@@ -395,7 +365,7 @@ $result=pg_query($conn,$sql);
                                                             <td>
                                                                 <?php echo $row["sl_no"]; ?>
                                                             </td>
-                                                            <td><a href="edit_employee.php?employee=<?php echo$row['employee_code']?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                            <td><?php echo$row['employee_code']; ?></td>
                                                             <td>
                                                                 <?php echo $row["name"]; ?>
                                                             </td>
@@ -504,7 +474,7 @@ $result=pg_query($conn,$sql);
                                                                         <td>
                                                                             <?php echo $row["sl_no"]; ?>
                                                                         </td>
-                                                                        <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                        <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></td>
                                                                         <td>
                                                                             <?php echo $row["name"]; ?>
                                                                         </td>
@@ -622,7 +592,7 @@ $result=pg_query($conn,$sql);
                                                                                     <td>
                                                                                         <?php echo $row["sl_no"]; ?>
                                                                                     </td>
-                                                                                    <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                                    <td><?php echo$row['employee_code']; ?></td>
                                                                                     <td>
                                                                                         <?php echo $row["name"]; ?>
                                                                                     </td>
@@ -728,7 +698,7 @@ $result=pg_query($conn,$sql);
                                                           <td>
                                                               <?php echo $row["sl_no"]; ?>
                                                           </td>
-                                                          <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                          <td><?php echo$row['employee_code']; ?></td>
                                                           <td>
                                                               <?php echo $row["name"]; ?>
                                                           </td>
@@ -875,7 +845,7 @@ if($table =='ministry'&& $post=='all') {
                                                                                                 <td>
                                                                                                     <?php echo $row["sl_no"]; ?>
                                                                                                 </td>
-                                                                                                <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                                                <td><?php echo$row['employee_code']; ?></td>
                                                                                                 <td>
                                                                                                     <?php echo $row["name"]; ?>
                                                                                                 </td>
@@ -1065,7 +1035,7 @@ if($table =='ministry'&& $post=='all') {
                                                                                                             <td>
                                                                                                                 <?php echo $row["sl_no"]; ?>
                                                                                                             </td>
-                                                                                                            <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                                                            <td><?php echo$row['employee_code']; ?></td>
                                                                                                             <td>
                                                                                                                 <?php echo $row["name"]; ?>
                                                                                                             </td>
@@ -1253,7 +1223,7 @@ if($table =='ministry'&& $post=='all') {
                                                                                                             <td>
                                                                                                                 <?php echo $row["sl_no"]; ?>
                                                                                                             </td>
-                                                                                                            <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                                                            <td><?php echo$row['employee_code']; ?></td>
                                                                                                             <td>
                                                                                                                 <?php echo $row["name"]; ?>
                                                                                                             </td>
@@ -1443,7 +1413,7 @@ $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='$post'
                                                                                                           <td>
                                                                                                               <?php echo $row["sl_no"]; ?>
                                                                                                           </td>
-                                                                                                          <td><a href="edit_employee.php?employee=<?php echo$row['employee_code'];?>&table=<?php echo$table;?>"><?php echo$row['employee_code']; ?></a></td>
+                                                                                                          <td><?php echo$row['employee_code']; ?></td>
                                                                                                           <td>
                                                                                                               <?php echo $row["name"]; ?>
                                                                                                           </td>
@@ -1526,5 +1496,5 @@ $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='$post'
                                                                                                             crossorigin="anonymous">
                                                                                                         </script>
                                                                                                         <?php
-*/
+
 ?>
