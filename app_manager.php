@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Login Portal</title>
+    <title>Query handler</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 </head>
 
@@ -41,13 +41,14 @@
     ?>
     <div id="cont">
 
-        <div class="row w-75 justify-content-between">
+        <div class="row w-75 justify-content-between flex-wrap">
             <div class="col-4">
                 <a href="reportgenration.php" style="text-decoration:none">
                     <div class="card h-100 link-dark">
 
                         <div class="card-body">
                             <h5 class="card-title text-center fs-6">ALL APPLICATION AND REPORT GENRATION</h5>
+                            <p class="text-center"> Click here </p>
                             <hr>
                             <p class="">NOC All Application : <?php echo $noc_all; ?></p>
                             <p class="">GRIEVENCE All Application : <?php echo $gri_all; ?></p>
@@ -83,6 +84,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title text-center">ALL APPLICATION STATUS</h5>
+                            <p class="text-center"> Click here </p>
                             <hr>
                             <p class="">Total Application : <?php echo $all_application; ?></p>
                             <p class="">Total Pendig Application : <?php echo $pending; ?></p>

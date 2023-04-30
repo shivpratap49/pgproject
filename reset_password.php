@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reset Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 </head>
@@ -28,7 +29,7 @@
             $row = pg_fetch_array($query);
             if ($row['expdate'] >= $curDate) { ?>
                 <div id="cont">
-                    <h2 style="position:absolute; top: 100px;">Welcome to Admin Login Portal
+                    <h2 style="position:absolute; top: 100px;">Reset Password
                     </h2>
                     <div id="login" class="bg-primary  p-0 bg-light">
                         <div class="container justify-content-center border border border-2 border-dark bg-primary rounded-4   ">
@@ -36,7 +37,15 @@
                                 <p> ADMIN LOGIN PORTAL</p>
                             </div>
                             <form action=update_password.php method="post">
-                                <input type="hidden" name="email" value="<?php echo $email; ?>">
+                            <div class="form-group">
+                                    <label for="exampleInputEmail1">New Username</label>
+                                    <input type="name" name="username" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">New Email</label>
+                                    <input type="email" name="newemail" class="form-control" value="<?php echo $email; ?>" required>
+                                </div>
+                                <input type="hidden" name="email" class="form-control" value="<?php echo $email; ?>" >
                                 <input type="hidden" name="reset_token" value="<?php echo $token; ?>">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Password</label>
@@ -46,7 +55,7 @@
                                     <label for="exampleInputEmail1">Confirm Password</label>
                                     <input type="password" name='cpassword' class="form-control">
                                 </div>
-                                
+
                                 <div class=" d-flex justify-content-center ">
 
                                     <div class="d-inline-flex p-2 ">
@@ -63,6 +72,8 @@
 
     <?php }
         } else {
+            echo'<div id="cont"><p text-center text-danger>*Your Token is not valid </p></div>';
+            
         }
     }
     ?>

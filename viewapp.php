@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Login Portal</title>
+    <title>Application View</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <style>
@@ -242,7 +243,7 @@
     if ($form == 'obj') { ?>
         <!--objection application-->
         <div class="container flex-fill " id=application style="">
-            <form action="objection.php" method="post" onsubmit="return valid()" name="form">
+            
                 <div class="container-sm border bg-white border-dark mt-5 ">
 
                     <h2 class="text-center mt-3"> APPLICATION </h2>
@@ -312,7 +313,7 @@
     }
     if ($form == 'gri') { ?>
         <div class="container flex-fill " id=application style="">
-            <form action="grevience.php" method="post" onsubmit="return valid()" name="form">
+            
                 <div class="container-sm border bg-white border-dark mt-5 ">
 
                     <h2 class="text-center mt-3"> APPLICATION </h2>
@@ -324,7 +325,7 @@
                     </div>
                     <div class="form w-80 mt-5 p-5">
                         <label for="floatingTextarea2" class="  d-inline">Describe your reason :-</label>
-                        <div class="  bg-body  d-inline mb-5 ms-5 me-5 " style="height: 100px">
+                        <div class="  bg-body  d-inline mb-5 ms-5 me-5 " style="min-height: 100px; white-space: wrap; ">
                             <p><?php echo $row['exam_name']; ?></p>
                         </div>
 

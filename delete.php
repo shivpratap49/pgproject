@@ -11,15 +11,15 @@ if($employee=="") {
 else{
 $sql = "DELETE FROM $table WHERE employee_code='$employee'";
 if (pg_query($conn,$sql)) {
-  echo "<h3>Record deleted successfully</h3>";
+  echo "<h3 class=text-center>Record deleted successfully</h3>";
 } else {
-  echo "<h3>Error deleting record:</h3>";
+  echo "<h3 class=text-center>Error deleting record:</h3>";
 }
 }
 }
 else
 {
-  echo"<h3>please select department</h3>";
+  echo"<h3 class=text-center>please select department</h3>";
 }
 ?>
 

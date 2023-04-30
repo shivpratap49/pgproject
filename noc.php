@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>dashboard</title>
+    <title>NOC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <style>
         body {
@@ -85,7 +86,7 @@
                 New Application
             </button>
         </div>
-        <div class=" justify-content-center" id="preapp" style="display:none">
+        <div class=" justify-content-center" id="preapp" style="display:flex;">
             <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <table class="table w-100">
                     <thead>
@@ -125,7 +126,7 @@
                             ?>
                             <table class="table ">
                                 <tr>
-                                    <th scope="col" style="text-align:center">Record not found</th>
+                                    <th scope="col" style="text-align:center">Application not found</th>
                                 <?php
                             }
                                 ?>

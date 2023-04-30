@@ -3,6 +3,7 @@ require_once('config.php');
 $table=trim($_GET['q']);
 $post=trim($_GET['w']);
 $form=trim($_GET['p']);
+$sdate;
 ?>
 
 
@@ -18,8 +19,11 @@ $form=trim($_GET['p']);
          $emp = $row["employee_code"];
          $result2 = pg_query($conn, "SELECT * FROM $able where employee_code='$emp'; ");
          $row2 = pg_fetch_array($result2);
-         
-     echo"<tr> <td> $row2[sl_no]</td><td>$row[employee_code] </td>  <td> <div id='name$i'>{$row2['name']}</div></td> <td>$row[application_no] </td> <td>".date("d-m-y",strtotime($row['apply_date']))."</td> <td>".date("d-m-y",strtotime($row['status_update_date']))."</td> <td> $row[action] </td> <td> {$row['form_type']}</td><td>$row2[present_post_grade]</td></tr>";
+        $GLOBALS['sdate']=date("d-m-Y",strtotime($row['status_update_date']));
+         if($GLOBALS['sdate']=="01-01-1970"){
+            $GLOBALS['sdate']="";
+         }
+     echo"<tr> <td> $row2[sl_no]</td><td>$row[employee_code] </td>  <td> <div id='name$i'>{$row2['name']}</div></td> <td>$row[application_no] </td> <td>".date("d-m-Y",strtotime($row['apply_date']))."</td> <td>".$GLOBALS['sdate']."</td> <td> $row[action] </td> <td> {$row['form_type']}</td><td>$row2[present_post_grade]</td></tr>";
     
       $i++;
       

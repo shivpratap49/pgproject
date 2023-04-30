@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>dashboard</title>
+    <title>Employee Login</title>
     <style>
     .new {
         width: 40%;
@@ -26,6 +27,7 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
 </head>
@@ -35,11 +37,11 @@
     <?php
   require_once('config.php');
   include('header.php');
-  /*$m=1900;
-for ($i = 1; $i<= 200; $i++) {
+ /* $m=1;
+for ($i = 1097; $i<= 1099; $i++) {
  
-$po="UPDATE driver SET present_post_grade='Senior Driver' WHERE present_post_grade='senior driver'";
-$tr=pg_query($po);
+$po="UPDATE driver SET sl_no='$m' WHERE present_post_grade='Head Driver'AND employee_code='$i'";
+$tr=pg_query($conn,$po);
 echo '$tr';
 $m++;
 }*/
@@ -129,3 +131,4 @@ else{
     <script src="js/index.js"></script>
     <?php include('footer.php');
  ?>
+ <!--This Project is Developed by Shiv Pratap Singh Rajawat under the guidence of Mrs. Itee Shree Nanda (DIO, Cuttak) -->
