@@ -85,7 +85,7 @@
         <div class=" flex-row w-100 justify-content-center mb-auto position-sticky" id="selection">
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
 
-                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE DEPARTMENT</label>
+                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE CATEGORY</label>
                 </div>
                 <select class="form-select" id="specificSizeSelectn" name="table">
                     <option selected disabled>Choose...</option>
@@ -102,7 +102,7 @@
                 </select>
             </div>
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
-                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE FORM TYPE</label>
+                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE QUERY TYPE</label>
                 </div>
                 <select class="form-select" id="formtype" name="formtype">
 
@@ -115,7 +115,7 @@
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
                 <div class="container-fluid">
                     
-                    <div> <label class="form-label text-white d-block" for="specificSizeSelect">Date</label></div>
+                    <div> <label class="form-label text-white d-block" for="specificSizeSelect">YEAR</label></div>
                         <input class="form-control d-inline me-2 w-75" type="text" id="datepicker" placeholder="----" aria-label="Search">
                         
                     

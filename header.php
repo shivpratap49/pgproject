@@ -1,6 +1,6 @@
 
-<header>
-   <nav class="d-flex flex-nowrap navbar navbar-expand-lg text-light bg-primary  m-0">
+<header class="sticky-top">
+   <nav class="d-flex flex-nowrap navbar navbar-expand-lg text-light bg-primary   m-0">
     <div class="  ms-1">
       <a class="navbar-brand m-0" href="#">
         <img src="images/EmblemN.png" alt="Bootstrap" width="60" height="50">

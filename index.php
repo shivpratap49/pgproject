@@ -17,10 +17,10 @@
     require_once('config.php');
     include('header.php');
     ?>
-    <div id="cont">
+    <div id="cont" >
         <h2 style="position:absolute; top: 100px;">Welcome to Login Menu
         </h2>
-        <div id="login" class="bg-primary  p-0 bg-light">
+        <div id="login" class="  p-0 bg-light ">
             <div class="container justify-content-center border border border-2 border-dark bg-primary   ">
                 <div class="d-flex justify-content-center p-0 text-white">
                     <p> D.M. Login Portal</p>
@@ -28,7 +28,7 @@
                 <div class=" d-flex justify-content-center  ">
                     <div class="d-inline-flex p-2 ">
 
-                        <button type="button" class="btn btn-warning " onclick="adminlogin()">Click here</button>
+                        <button type="button" class="btn btn-warning " onclick="dmlogin()">Click here</button>
                     </div>
 
                 </div>

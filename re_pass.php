@@ -27,15 +27,14 @@
         <form action=admin_login.php method="post">
           <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
             <label for="exampleInputEmail1" class="form-label text-white">Enter Employeecode </label>
-            <input type="name" name="Employee-code" class="form-control" id="name" value="Admin" aria-describedby="emailHelp">
+            <input type="number" name="Employee-code" class="form-control" id="name" placeholder="Enter Employee Code" aria-describedby="emailHelp">
 
           </div>
           <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
             <label for="exampleInputPassword1" class="form-label text-white">Enter Mobile number</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="number" name="mob_no" class="form-control" id="exampleInputPassword1">
           </div>
-          <div class=" d-flex justify-content-end"> <span class="text-dark  " style="font:size 8px; " id="address"><a href="admin_passreset.php" class="link-dark">forgot Password ?</a></span></div>
-
+          
           <div class=" d-flex justify-content-center ">
 
             <div class="d-inline-flex p-2 ">

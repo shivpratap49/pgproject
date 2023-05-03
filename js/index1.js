@@ -4,3 +4,7 @@ function myFunction(){
   function adminlogin(){
     window.location= "admin_login.php";
   }
+  function dmlogin(){
+    window.location= "dm_login.php";
+  }
+  

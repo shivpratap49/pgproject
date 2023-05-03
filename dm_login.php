@@ -67,12 +67,12 @@
 
     ?>
     <div id="cont">
-        <h2 style="position:absolute; top: 100px;">Welcome to Admin Login Portal
+        <h2 style="position:absolute; top: 100px;">Welcome to DM Login
         </h2>
         <div id="login" class="bg-primary  p-0 bg-light">
             <div class="container justify-content-center border border border-2 border-dark bg-primary rounded-4   ">
                 <div class="d-flex justify-content-center p-0">
-                    <p> ADMIN LOGIN PORTAL</p>
+                    <p> DM LOGIN PORTAL</p>
                 </div>
                 <form action=admin_login.php method="post">
                     <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">

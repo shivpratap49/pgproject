@@ -20,9 +20,9 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('spsinghrajawat49@yahoo.com', 'Mailer');
-    $mail->addAddress('spsinghrajawat49@gmail.com', 'Joe User');     //Add a recipient
-    $mail->addAddress('spsinghrajawat49@gmail.com');               //Name is optional
+    $mail->setFrom('spsinghrajawat49@yahoo.com', 'RAJAWAT-INFOTECH');
+    $mail->addAddress('aarohisharma1144@gmail.com', 'Heart queen');     //Add a recipient
+                  //Name is optional
     $mail->addReplyTo('spsinghrajawat49@yahoo.com', 'Information');
     $mail->addCC('spsinghrajawat49@gmail.com');
     $mail->addBCC('spsinghrajawat49@gmail.com');
@@ -33,8 +33,8 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>jay ho!</b>';
+    $mail->Subject = 'This is System generated mail';
+    $mail->Body    = ' <b>Arohi nalli billi </b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

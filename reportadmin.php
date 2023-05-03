@@ -19,12 +19,9 @@
     include('header.php');
     ?>
     <div id="cont" class="flex-column align-items-center">
-        <div  class=" d-flex  justify-content-centere mb-auto">
-        <h2 class="mt-2"> Welcome To DM Dashboard
-        </h2>
-        </div>
+        
 
-        <div class=" d-flex w-75 justify-content-evenly  mb-auto  ">
+        <div class=" d-flex w-75 justify-content-evenly ">
 
             <div class="m-3 p-3 d-flex flex-column align-items-center border border-2  bg-primary rounded-2 border-dark w-25 ">
                 <p class="text-white">Gradation Report</p>

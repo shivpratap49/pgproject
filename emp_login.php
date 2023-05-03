@@ -6,7 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Employee Login</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet">
     <style>
+        .icon {
+  padding: 10px;
+  background: white;
+  color: black;
+  min-width: 30px;
+  text-align: center;
+  
+        }
     .new {
         width: 40%;
 
@@ -25,12 +39,8 @@
 
     }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-
 </head>
+
 
 <body>
 
@@ -82,7 +92,7 @@ else{
  }
 }
  ?>
-    <div style="min-height:80vh; display:flex;">
+    <div style="min-height:80vh; display:flex; " id="gol">
 
         <div class="d-flex justify-content-center border me-auto ms-auto border-warning border-4 bg-dark bg-opacity-25  rounded-4 new"
             style=" margin-top:9rem" id="boxlog">
@@ -110,9 +120,11 @@ else{
                 </div>
                 <div class="mb-3 mt-3 me-auto ms-auto input col-md-8">
                     <label for="exampleInputEmail1" class="form-label text-dark">EMPLOYEE CODE</label>
-                    <input type="name" name="employee_code" class="form-control " id="name"
+                    <div class="d-flex bg-white"> 
+                        <i class="fa fa-user icon border  border-end-0 border-4"></i>
+                    <input type="name" name="employee_code" class="form-control  border-start-0 rounded-0" id="name" placeholder="Employee Code"
                         aria-describedby="emailHelp">
-
+                      </div>
                 </div>
                 <div class="mb-3 me-auto ms-auto input col-md-8">
                     <label for="start" class="form-label text-dark">DOB</label>

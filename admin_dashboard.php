@@ -20,37 +20,41 @@
     include('header.php');
     ?>
     <div id="cont" class="flex-column align-items-center">
+    <div  class=" d-flex  justify-content-centere mb-auto">
+        <h2 class="mt-2"> Welcome To Admin Dashboard
+        </h2>
+        </div>
 
-        <div class=" d-flex w-75 justify-content-evenly    ">
+        <div class=" d-flex w-75 justify-content-evenly  mb-auto  ">
 
-            <div class="m-3 p-3 d-flex flex-column align-items-center border border-2  bg-primary rounded-2 border-dark w-25 ">
+            <div class="mx-3 p-3 d-flex flex-column align-items-center border border-2  bg-primary rounded-2 border-dark w-25 ">
                 <p class="text-white">New Registraion of Employee</p>
 
                 <a href="registration.php"><button type="button" class="btn btn-warning mx-5">Click here</button></a>
             </div>
 
-            <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
+            <div class="mx-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
                 <p class="text-white">Query Manager</p>
 
                 <a href="app_manager.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>
 
         </div>
-        <div class=" d-flex w-75 justify-content-evenly    ">
-            <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
+        <div class=" d-flex w-75 justify-content-evenly  mb-auto   ">
+            <div class="mx-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
                 <p class="text-white">View/Edit Employee details</p>
 
                 <a href="view_employee.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>
-            <div class="m-3 p-3 d-flex flex-column align-items-center border rounded-2 border-2 bg-primary border-dark w-25">
+            <div class="mx-3 p-3 d-flex flex-column align-items-center border rounded-2 border-2 bg-primary border-dark w-25">
                 <p class="text-white">Reset Password of Employee</p>
                 <a href="re_pass.php"> <button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
 
             </div>
-            <div class="m-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
+            <div class="mx-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
                 <p class="text-white">Report generation</p>
 
-                <a href="report.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
+                <a href="reportadmin.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>
         </div>
 
