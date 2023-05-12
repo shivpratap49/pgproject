@@ -58,7 +58,7 @@
         <div id="data" class="mb-auto w-100 mt-3">
             <?php
             $sdate;
-            $sql = "SELECT*FROM applicatio";
+            $sql = "SELECT*FROM applicatio  ORDER BY apply_date DESC;";
             $result = pg_query($conn, $sql);
             echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> All Query list</th></tr><tr><th scope="col">Sl no.</th><th scope="col">Gradation sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Applicant </th> <th scope="col">Application no. </th><th scope="col">Apply date</th><th scope="col">Approved date</th><th scope="col">Status</th><th scope="col">Application type</th><th scope="col">Present post</th> </tr>';
             if (pg_num_rows($result) > 0) {

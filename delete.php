@@ -2,8 +2,7 @@
 require_once('config.php');
 $table= trim($_GET['table']);
 $employee= trim($_GET['employee']);
-echo $table;
-echo $employee;
+
 if($table!=""){
 if($employee=="") {
     echo "<h3>Please enter Employee code</h3>";

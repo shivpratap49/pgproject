@@ -79,7 +79,7 @@
     }
     ?><div style="min-height:100%">
         <div class="d-flex p-2  bg-dark justify-content-evenly mb-5">
-            <button type="button" class="btn btn-warning" onclick="preapp()" style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+            <button type="button" class="btn btn-success" onclick="preapp()" style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 Status of Apllication
             </button>
             <button type="button" class="btn btn-warning" onclick="newapp()" style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
@@ -333,11 +333,15 @@
     </div>
 
     <Script>
+         let btn=document.getElementsByClassName("btn");
         function preapp() {
             let pre = document.getElementById("preapp");
             let newapp = document.getElementById("application");
             newapp.style.display = "none";
             pre.style.display = "flex";
+            btn[0].classList.remove("btn-warning");
+            btn[0].classList.add("btn-success");
+            btn[1].classList.add("btn-warning");
         }
 
         function newapp() {
@@ -345,6 +349,9 @@
             let pre = document.getElementById("preapp");
             pre.style.display = "none";
             newapp.style.display = "block";
+            btn[1].classList.remove("btn-warning");
+            btn[1].classList.add("btn-success");
+            btn[0].classList.add("btn-warning");
         }
 
         function valid() {

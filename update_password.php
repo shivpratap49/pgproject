@@ -18,7 +18,7 @@
   include('header.php');
 if(isset($_POST['password']) && $_POST['reset_token'] && $_POST['email'])
 {
-$username = $_POST['username'];
+
 $newemailId = $_POST['newemail'];
 $emailId = $_POST['email'];
 $token = $_POST['reset_token'];
@@ -26,10 +26,10 @@ $password = md5($_POST['password']);
 $query = pg_query($conn,"SELECT * FROM admin WHERE reset_token='".$token."'");
 $row = pg_num_rows($query);
 if($row){
-pg_query($conn,"UPDATE admin set  password='" . $password . "', reset_token='" . NULL . "', username='".$username."', email='".$newemailId."' WHERE email='" . $emailId . "'");
+pg_query($conn,"UPDATE admin set  password='" . $password . "', reset_token='" . NULL . "',  email='".$newemailId."' WHERE email='" . $emailId . "'");
 echo'<div id="cont"><p text-center text-success>Congratulations! Your password has been updated successfully </p></div>';
 }else{
-  echo'<div id="cont"><p text-center text-danger>Congratulations! Your password has been updated successfully </p></div>';
+  echo'<div id="cont"><p text-center text-danger>Error password not updated </p></div>';
 }
 }
 include('footer.php');

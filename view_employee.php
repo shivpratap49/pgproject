@@ -59,7 +59,7 @@
         <div class=" flex-row w-100 justify-content-center mb-auto position-sticky" id="selection">
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
 
-                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE DEPARTMENT</label>
+                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE CATEGORY</label>
                 </div>
                 <select class="form-select" id="specificSizeSelectn" name="table">
                     <option selected disabled>Choose...</option>
@@ -78,9 +78,9 @@
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
                 <div class="container-fluid">
                     
-                    <div> <label class="form-label text-white d-block" for="specificSizeSelect">Search And Delete Employee</label></div>
-                        <input class="form-control d-inline me-2 w-75" type="search" id="findemployee" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success btn-sm d-inline" id="find" type="button">Search</button>
+                    <div> <label class="form-label text-white d-block" for="specificSizeSelect">Delete Employee</label></div>
+                        <input class="form-control d-inline  w-75" type="search" id="findemployee" placeholder="Employee Code" aria-label="Search">
+                        <button class="btn btn-outline-success btn-sm d-inline" id="find" type="button">Delete</button>
                     
                 </div>
 

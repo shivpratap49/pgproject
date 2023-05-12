@@ -38,6 +38,11 @@
 
                 <a href="app_manager.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
             </div>
+            <div class="mx-3 p-3 d-flex flex-column rounded-2  align-items-center bg-primary border border-2 border-dark w-25">
+                <p class="text-white">View Old Gradation  </p>
+
+                <a href="oldgradation.php"><button type="button" class="btn btn-warning mx-5" onclick="">Click here</button></a>
+            </div>
 
         </div>
         <div class=" d-flex w-75 justify-content-evenly  mb-auto   ">

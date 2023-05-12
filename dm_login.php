@@ -72,21 +72,21 @@
         <div id="login" class="bg-primary  p-0 bg-light">
             <div class="container justify-content-center border border border-2 border-dark bg-primary rounded-4   ">
                 <div class="d-flex justify-content-center p-0">
-                    <p> DM LOGIN PORTAL</p>
+                    <p> DM LOGIN </p>
                 </div>
-                <form action=admin_login.php method="post">
+                <form action=dm_login.php method="post">
                     <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
                         <label for="exampleInputEmail1" class="form-label text-white">Username </label>
                         <div class="d-flex">
                             <i class="fa fa-user icon "></i>
-                            <input type="name" name="username" class="form-control border-0 rounded-0" id="name" placeholder="Username" aria-describedby="emailHelp">
+                            <input type="name" name="username" class="form-control border-0 rounded-0" id="name" placeholder="Username" aria-describedby="emailHelp" required="">
                         </div>
                     </div>
                     <div class="mb-3 mt-3 me-auto ms-auto  col-md-8">
                         <label for="exampleInputPassword1" class="form-label text-white ">Password</label>
                         <div class="d-flex">
                             <i class="fa fa-key icon"></i>
-                            <input type="password" name="password" class="form-control border-0 rounded-0" id="exampleInputPassword1">
+                            <input type="password" name="password" class="form-control border-0 rounded-0" id="exampleInputPassword1" required="">
                         </div>
                         <input type="checkbox" onclick="showpass()">Show Password
                     </div>

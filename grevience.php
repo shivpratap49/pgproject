@@ -79,7 +79,7 @@ else{
   ?>
     <div id="cont" class="flex-column">
         <div class="d-flex bg-dark p-2  justify-content-evenly mb-auto w-100">
-            <button type="button" class="btn btn-warning" onclick="preapp()"
+            <button type="button" class="btn btn-success" onclick="preapp()"
                 style="--bs-btn-padding-y: .025rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 Status of Apllication
             </button>
@@ -88,10 +88,10 @@ else{
                 New Application
             </button>
         </div>
-        <div class=" justify-content-center mb-auto border boreder-5 w-75 align-item-start" id="preapp"
+        <div class=" justify-content-center mb-auto w-75" id="preapp"
             style="display:flex">
-            <div class="w-75 p-3 border boreder-1 shadow-lg p-3 mb-5 bg-body rounded rounded-4">
-                <table class="table">
+            <div class="w-100 p-3  shadow-lg p-3 mb-5 bg-body rounded rounded-4">
+                <table class="table w-100">
                     <thead>
                         <tr>
                             <th scope="col">Application No.</th>
@@ -202,11 +202,15 @@ if (pg_num_rows($result1) > 0) {
         </div>
     </div>
     <Script>
+        let btn=document.getElementsByClassName("btn");
     function preapp() {
         let pre = document.getElementById("preapp");
         let newapp = document.getElementById("application");
         newapp.style.display = "none";
         pre.style.display = "flex";
+        btn[1].classList.remove("btn-warning");
+        btn[1].classList.add("btn-success");
+        btn[2].classList.add("btn-warning");
     }
 
     function newapp() {
@@ -214,6 +218,9 @@ if (pg_num_rows($result1) > 0) {
         let pre = document.getElementById("preapp");
         pre.style.display = "none";
         newapp.style.display = "block";
+        btn[2].classList.remove("btn-warning");
+        btn[2].classList.add("btn-success");
+        btn[1].classList.add("btn-warning");
     }
     </Script>
 

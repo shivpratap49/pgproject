@@ -11,14 +11,14 @@
       }
     ?>
     <div class="bg-dark py-3">
-      <ul class="text-white d-flex justify-content-center " style="list-style-type: none;">
-        <li class="px-2">Website Policies</li>
+      <ul class="text-white d-flex justify-content-center flex-wrap" style="list-style-type: none;">
+        <li class="px-2 "><a href="https://cuttack.nic.in/website-policies/" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Website Policies</a></li>
         <li class="px-2">/</li>
-        <li class="px-2">Help</li>
+        <li class="px-2"><a href="https://cuttack.nic.in/help/"  class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Help</a></li>
         <li class="px-2">/</li>
-        <li class="px-2">Contact Us</li>
+        <li class="px-2"><a href="https://cuttack.nic.in/contact-us/"  class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
         <li class="px-2">/</li>
-        <li class="px-2">Feedback</li>
+        <li class="px-2"><a href="https://cuttack.nic.in/feedback/"  class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Feedback</a></li>
       </ul>
       <div class="d-flex w-100 justify-content-center ">
         <ul class="text-white d-flex justify-content-center flex-column align-items-center  " style="list-style-type: none; font-size:13px;">

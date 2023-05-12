@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Application Report</title>
+    <title>Old gradation Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -72,7 +72,6 @@
     require_once('config.php');
     require_once('admin_session.php');
     include('header.php');
-    $year=date("Y");
     if (isset($_GET["yes"])) {
     ?>
 
@@ -95,7 +94,7 @@
                     <option value="ministry">MINISTRY STAFF</option>
                 </select>
             </div>
-            <div class=" p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto" style="display:none;">
+            <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
                 <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE POST</label></div>
                 <select class="form-select" id="specificSizeSelecta" name="present_post_grade">
                     <option selected disabled>Choose...</option>
@@ -103,45 +102,33 @@
                 </select>
             </div>
             <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
-                <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE QUERY TYPE</label>
-                </div>
-                <select class="form-select" id="formtype" name="formtype">
-
-                    <option selected disabled>Choose...</option>
-                    <option value="NOC">NOC</option>
-                    <option value="GRIEVENCE">GRIVENCE</option>
-                    <option value="OBJECTION">OBJECTION</option>
-                </select>
-            </div>
-            <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
                 <div class="container-fluid">
                     
                     <div> <label class="form-label text-white d-block" for="specificSizeSelect">YEAR</label></div>
-                        <input class="form-control d-inline me-2 w-75" type="text" value="<?php echo$year ?>" id="datepicker" oninput="showUser()" placeholder="----" aria-label="Search">
+                        <input class="form-control d-inline me-2 w-75" type="text" id="datepicker" value="2023" aria-label="Search">
                         
                     
                 </div>
 
             </div>
-
         </div>
         <div id="data" class="mb-auto w-100 mt-3"> </div>
-    </div>
+        
     </div>
     <div class="d-flex flex-row justify-content-center">
-        <button class="btn btn-success m-3" onclick="window.print()">Print</button>
-    </div>
-
-
+                    <button class="btn btn-success m-3" onclick="window.print()">Print</button>
+                </div>
     <script src="js/view_employee.js"></script>
     <script>
         document.getElementById("specificSizeSelectn").addEventListener("change", showUser);
 
         document.getElementById("specificSizeSelecta").addEventListener("change", showUser);
+        
         document.getElementById("datepicker").addEventListener("change", showUser);
-        document.getElementById("formtype").addEventListener("change", showUser);
-        let quer = document.getElementById("formtype");
-        let date=document.getElementById("datepicker");
+        
+        let year=document.getElementById("datepicker");
+
+
         function showUser(str) {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -149,9 +136,11 @@
                     document.getElementById("data").innerHTML = this.responseText;
                 }
             }
-            xmlhttp.open("GET", `reportout.php?q=+${s1.value}&w=+${s2.value}&p=${quer.value}&o=${date.value}`, true);
+            xmlhttp.open("GET", `oldgradationfatch.php?q=+${s1.value}&w=+${s2.value}&p=+${year.value}`, true);
             xmlhttp.send();
         }
+
+        
     </script>
     <?php
     include('footer.php');

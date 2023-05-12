@@ -78,7 +78,7 @@ require_once('admin_session.php');
                         <tr>
                             <th scope="col">Application No.</th>
                             <th scope="col">Apply Date</th>
-                            <th scope="col">Approved Date</th>
+                            <th scope="col">Query type</th>
                             <th scope="col">Status</th>
                             <th scope="col" colspan="2" class=" text-center">Action</th>
                         </tr>
@@ -97,12 +97,7 @@ if (pg_num_rows($result_noc) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_noc['apply_date'])); 
                              echo $newDate;   ?></td>
 
-                            <td><?php $stDate = date("d-m-Y", strtotime($row_noc['status_update_date']));  
-    if($stDate=='01-01-1970'){
-        echo "";
-    }else{
-        echo $stDate;
-    }   ?></td>
+                            <td><?php echo $row_noc['form_type']?></td>
                             <td><?php echo $row_noc['action'];?></td>
                             <td><a
                                     href="status.php?application_no=<?php echo $row_noc['application_no']?>& status=Approved"><button
@@ -134,7 +129,7 @@ if (pg_num_rows($result_noc) > 0) {
                         <tr>
                             <th scope="col">Application No.</th>
                             <th scope="col">Apply Date</th>
-                            <th scope="col">Approved Date</th>
+                            <th scope="col">Query type</th>
                             <th scope="col">Status</th>
                             <th scope="col" colspan="2" class=" text-center">Action</th>
                         </tr>
@@ -153,12 +148,7 @@ if (pg_num_rows($result_grivence) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_gri['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td><?php $stDate = date("d-m-Y", strtotime($row_gri['status_update_date']));  
-    if($stDate=='01-01-1970'){
-        echo "";
-    }else{
-        echo $stDate;
-    };   ?></td>
+                            <td><?php echo $row_gri['form_type']?></td>
                             <td><?php echo $row_gri['action'];?></td>
                             <td><a
                                     href="status.php?application_no=<?php echo $row_gri['application_no']?>& status=Approved"><button
@@ -190,7 +180,7 @@ if (pg_num_rows($result_grivence) > 0) {
                         <tr>
                             <th scope="col">Application No.</th>
                             <th scope="col">Apply Date</th>
-                            <th scope="col">Approved Date</th>
+                            <th scope="col">Query type</th>
                             <th scope="col">Status</th>
                             <th scope="col" colspan="2" class=" text-center">Action</th>
                         </tr>
@@ -209,12 +199,7 @@ if (pg_num_rows($result_obj) > 0) {
                             <td><?php $newDate = date("d-m-Y", strtotime($row_obj['apply_date']));  
     echo $newDate;   ?></td>
 
-                            <td><?php $stDate = date("d-m-Y", strtotime($row_obj['status_update_date']));  
-    if($stDate=='01-01-1970'){
-        echo "";
-    }else{
-        echo $stDate;
-    }   ?></td>
+                            <td><?php echo $row_obj['form_type']?></td>
                             <td><?php echo $row_obj['action'];?></td>
                             <td><a
                                     href="status.php?application_no=<?php echo $row_obj['application_no']?>& status=Approved"><button
@@ -246,29 +231,40 @@ if (pg_num_rows($result_obj) > 0) {
     let noc = document.getElementById("noc");
     let grievence = document.getElementById("grievence");
     let objection = document.getElementById("objection");
-    console.log(noc);
-    console.log(grievence);
-    console.log(objection);
-
+    let btn=document.getElementsByClassName("btn");
     function nocf() {
         grievence.style.display = "none";
         objection.style.display = "none";
         noc.style.display = "flex";
+        btn[1].classList.remove("btn-warning");
+        btn[1].classList.add("btn-success");
+        btn[2].classList.add("btn-warning");
+        btn[3].classList.add("btn-warning");
     }
 
     function grievencef() {
         objection.style.display = "none";
         noc.style.display = "none";
         grievence.style.display = "flex";
+        btn[2].classList.remove("btn-warning");
+        btn[1].classList.add("btn-warning");
+        btn[3].classList.add("btn-warning");
+        btn[2].classList.add("btn-success");
     }
+    
 
     function objectionf() {
         grievence.style.display = "none";
         noc.style.display = "none";
         objection.style.display = "flex";
+        btn[3].classList.remove("btn-warning");
+        btn[3].classList.add("btn-success");
+        btn[1].classList.add("btn-warning");
+        btn[2].classList.add("btn-warning");
     }
     </script>
 
     <?php
   include('footer.php');
  ?>
+ 

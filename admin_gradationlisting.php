@@ -101,16 +101,7 @@
 
                 </select>
             </div>
-            <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
-                <div class="container-fluid">
-                    
-                    <div> <label class="form-label text-white d-block" for="specificSizeSelect">YEAR</label></div>
-                        <input class="form-control d-inline me-2 w-75" type="text" id="datepicker" placeholder="--/--/----" aria-label="Search">
-                        
-                    
-                </div>
-
-            </div>
+            
         </div>
         <div id="data" class="mb-auto w-100 mt-3"> </div>
         

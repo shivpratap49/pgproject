@@ -2,6 +2,7 @@
   document.getElementById("specificSizeSelectn").addEventListener("change", populate);
   var s1=document.getElementById("specificSizeSelectn");
     var s2=document.getElementById("specificSizeSelecta");
+    window.addEventListener("reload", populate());
   function populate(){
     
     

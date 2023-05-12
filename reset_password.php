@@ -46,16 +46,10 @@
                     <div id="login" class="bg-primary  p-0 bg-light">
                         <div class="container justify-content-center border border border-2 border-dark bg-primary rounded-4   ">
                             <div class="d-flex justify-content-center p-0">
-                                <p> ADMIN LOGIN PORTAL</p>
+                                <p> Reset Password</p>
                             </div>
-                            <form action=update_password.php method="post">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">New Username</label>
-                                    <div class="d-flex">
-                                        <i class="fa fa-user icon "></i>
-                                        <input type="name" name="username" class="form-control border-0 rounded-0" value="<?php echo $row['username']; ?>" required>
-                                    </div>
-                                </div>
+                            <form action=update_password.php method="post" onsubmit ="return verifyPassword()">
+                                
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">New Email</label>
                                     <div class="d-flex">
@@ -79,12 +73,13 @@
                                         <input type="password" name='cpassword' class="form-control border-0 rounded-0"  id=password2>
                                     </div>
                                     <input type="checkbox" onclick="showpass()">Show Password
+                                    <span id="message" class="d-block text-light"></span>
                                 </div>
                                 <div class=" d-flex justify-content-center ">
 
                                     <div class="d-inline-flex p-2 ">
 
-                                        <button type="submit" class="btn btn-warning " name="new-password"> Save</button>
+                                        <button type="submit" class="btn btn-warning " name="new-password" value="submit"> Save</button>
                                     </div>
 
                                 </div>
@@ -118,6 +113,29 @@
                 y.type = "password";
             }
         }
+        function verifyPassword() {
+  var pw = document.getElementById("password1").value;
+  var cpw = document.getElementById("password2").value;
+  //check empty password field
+  if(pw != cpw) {
+     document.getElementById("message").innerHTML = "*Password not matched";
+     return false;
+  }
+ 
+ //minimum password length validation
+ // if(pw.length < 8) {
+   //  document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+     //return false;
+ // }
+
+//maximum length of password validation
+  // if(pw.length > 15) {
+  //    document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+  //    return false;
+  // } else {
+  //    alert("Password is correct");
+  // }
+}
     
     </Script>
     <script src="js/index1.js"></script>

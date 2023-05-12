@@ -15,7 +15,7 @@
     <style>
         .icon {
   padding: 10px;
-  background: white;
+  background: gray;
   color: black;
   min-width: 30px;
   text-align: center;
@@ -42,19 +42,26 @@
 </head>
 
 
-<body>
+<body class="bg-dark bg-opacity-25">
 
     <?php
   require_once('config.php');
   include('header.php');
- /* $m=1;
-for ($i = 1097; $i<= 1099; $i++) {
  
-$po="UPDATE driver SET sl_no='$m' WHERE present_post_grade='Head Driver'AND employee_code='$i'";
-$tr=pg_query($conn,$po);
-echo '$tr';
-$m++;
-}*/
+// $rin=md5("12345");
+//   $sql1="SELECT*FROM ministry" ;
+//   $result1=pg_query($conn,$sql1);
+  
+// $m=1;
+// while($row1 = pg_fetch_array($result1)){
+// $EM=$row1['employee_code'];
+ 
+//$po="INSERT INTO login(employee_code,password) VALUES('1076','$rin')";
+//$tr=pg_query($conn,$po);
+
+
+// }
+
 ?>
     <?php
   $log=true;
@@ -63,18 +70,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 $table=($_POST['table']);
 $present_post_grade=$_POST['present_post_grade'];
 $user=($_POST['employee_code']);
-$pass=($_POST['dob']);
+$pass=md5($_POST['password']);
 
-$sql="SELECT*FROM $table WHERE employee_code='$user' " ;
+$sql="SELECT*FROM login WHERE employee_code='$user' AND password='$pass'" ;
 $result=pg_query($conn,$sql);
 $row = pg_fetch_array($result);
-if(pg_num_rows($result)==1){
+if(pg_num_rows($result)>0){
+    $sql1="SELECT employee_code FROM $table WHERE employee_code='$user' " ;
+    $result1=pg_query($conn,$sql1);
+    if(pg_num_rows($result1)>0){
   session_start();
   $_SESSION['loggedin']=true; 
   $_SESSION['employee_code']=$user;
   $_SESSION['table']=$table;
   $_SESSION['dob']=$pass;
   header("location: home.php");
+    }else{
+echo' <div class="alert  alert-danger" role="alert">Wrong Employee Category </div>';
+    }
 }  
 else{
  $log=false;
@@ -86,24 +99,24 @@ else{
  if($_SERVER["REQUEST_METHOD"]=="POST"){ 
  if( $log==false){ ?>
     <div class="alert  alert-danger" role="alert">
-        Invalid User or Password
+        Invalid User or Password  
     </div>
     <?php
  }
 }
  ?>
-    <div style="min-height:80vh; display:flex; " id="gol">
+    <div style="min-height:80vh; display:flex; " class="align-items-center"id="gol">
 
-        <div class="d-flex justify-content-center border me-auto ms-auto border-warning border-4 bg-dark bg-opacity-25  rounded-4 new"
-            style=" margin-top:9rem" id="boxlog">
+        <div class="d-flex justify-content-center border me-auto ms-auto bg-opacity-50 bg-info shadow-lg  rounded-4 new"
+             id="boxlog">
 
 
-            <form action=emp_login.php method="post">
-                <div class="d-flex justify-content-center me-auto ms-auto mt-2 w-100 input">
-                    <div class="input me-2" style="  width: 48.333%; display: inline-block; ">
+            <form action=emp_login.php method="post" class="w-75">
+                <div class="d-flex  mt-2 w-100 input">
+                    <div class="input me-1" style=" width: 49.333%; display: inline-block; ">
                         <label class="form-label text-dark" for="specificSizeSelect">Employee Category</label>
-                        <select class="form-select" id="specificSizeSelectn" name="table">
-                            <option selected disabled>Choose...</option>
+                        <select class="form-select w-100 " id="specificSizeSelectn" name="table" required="">
+                            <option selected disabled value="">Choose...</option>
                             <option value="driver">DRIVER STAFF</option>
                             <option value="revenue">REVENUE STAFF</option>
                             <option value="ministry">MINISTRY STAFF</option>
@@ -112,25 +125,27 @@ else{
                     </div>
                     <div class="input" style="  width: 48.333%; display: inline-block;">
                         <label class="form-label text-dark" for="specificSizeSelect"> POST</label>
-                        <select class="form-select" id="specificSizeSelecta" name="present_post_grade">
+                        <select class="form-select w-100 " id="specificSizeSelecta" name="present_post_grade" required="" >
                             <option selected disabled>Choose...</option>
 
                         </select>
                     </div>
                 </div>
                 <div class="mb-3 mt-3 me-auto ms-auto input col-md-8">
-                    <label for="exampleInputEmail1" class="form-label text-dark">EMPLOYEE CODE</label>
+                    <label for="exampleInputEmail1" class="form-label text-dark ">EMPLOYEE CODE</label>
                     <div class="d-flex bg-white"> 
-                        <i class="fa fa-user icon border  border-end-0 border-4"></i>
-                    <input type="name" name="employee_code" class="form-control  border-start-0 rounded-0" id="name" placeholder="Employee Code"
-                        aria-describedby="emailHelp">
+                        <i class="fa fa-user icon "></i>
+                    <input type="name" name="employee_code" class="form-control  border-0 rounded-0" id="name" placeholder="Employee Code"
+                        aria-describedby="emailHelp" required="">
                       </div>
                 </div>
                 <div class="mb-3 me-auto ms-auto input col-md-8">
-                    <label for="start" class="form-label text-dark">DOB</label>
-                    <input type="date" id="start" name="dob" class="form-control" value="2023-01-01" min="1900-01-01"
-                        max="2050-12-31">
-
+                <label for="exampleInputPassword1" class="form-label  ">Password</label>
+                        <div class="d-flex">
+                            <i class="fa fa-key icon"></i>
+                            <input type="password" name="password" class="form-control border-0 rounded-0" id="exampleInputPassword1" required="">
+                        </div>
+                        <input type="checkbox" onclick="showpass()">Show Password
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn input btn-warning  mb-4 ">Log in</button>
@@ -139,7 +154,16 @@ else{
         </div>
     </div>
 
-
+    <script>
+        function showpass() {
+            var x = document.getElementById("exampleInputPassword1");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
     <script src="js/index.js"></script>
     <?php include('footer.php');
  ?>

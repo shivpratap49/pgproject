@@ -25,7 +25,7 @@
         </div>
       </a>
   </nav>
-  <div class="d-flex justify-content-center bg-warning ">
+  <div class="d-flex justify-content-center bg-warning " style="font-size:90%">
     Gradation Listing of Employee Working in Collactrate Cuttack.
   </div>
   <script>

@@ -53,13 +53,20 @@ require_once('admin_session.php');
      
       $sql = "INSERT INTO driver (name,dob,category,h_block,date_of_entry_into_govt_service,date_of_joining_to_post_of_sr_driver,date_of_joining_to_post_of_head_driver,driving_licence_no,date_of_superannuation,present_place_of_posting,present_post_grade,employee_code) VALUES ('$employee_name','$dob','$category','$h_block','$join_date','$senior_date','$head_date','$driving_license',' $s_date','$present_place','$present_post','$employee_code');";
     if(pg_query($conn,$sql))
-    { ?>
+    { $rin=md5('12345');
+        $po="INSERT INTO login(employee_code,password) VALUES('$employee_code','$rin')";
+       if(pg_query($conn,$po)){
+        
+        ?>
     <div class="alert alert-success" role="alert">
-    Employee Regstered Successfully.
+    Employee Regstered Successfully and Employee Password is 12345.
     </div>
     <?php 
       
+    }else{
+        echo'<div class="alert alert-danger" role="alert">Employee Regstered Successfully but his Password is not generated.</div>';
     }
+}
     else
     echo"Error";
     
@@ -87,13 +94,19 @@ require_once('admin_session.php');
         $s_date=($_POST['s_date'] );
      $sql = "INSERT INTO ministry (sl_no,name,dob,category,h_block,e_qual,j_date,r_year,pa_paper_i,pa_paper_ii,fa_paper_iii,fa_paper_iv,s_date_present,place_of_posting,present_post_grade,j_sc_date,j_hc_date,employee_code) VALUES ('$sl_no', '$employee_name', '$dob', '$category', '$h_block','$e_qual','$join_date','$r_year','$pa_paper_i','$pa_paper_ii','$fa_paper_iii','$fa_paper_iv','$s_date','$present_place','$present_post','$j_sc_date','$j_hc_date','$employee_code');";
         if(pg_query($conn,$sql))
-        { ?>
+        { 
+            if(pg_query($conn,$po)){
+            $rin=md5('12345');
+        $po="INSERT INTO login(employee_code,password) VALUES('$employee_code','$rin')";?>
     <div class="alert alert-success" role="alert">
      Employee Regstered Successfully.
     </div>
     <?php 
            
+        }else{
+            echo'<div class="alert alert-danger" role="alert">Employee Regstered Successfully but his Password is not generated.</div>';
         }
+    }
         else
         echo"Error";
         
@@ -122,13 +135,20 @@ require_once('admin_session.php');
             
              $sql = "INSERT INTO revenue (sl_no,name,dob,category,h_block,edn_qual,j_date_govt_service,post_name_intial_grade,j_date_present_grade,theory,practical,deptt_exam,s_date,present_place_of_posting,present_post_grade,employee_code) VALUES ('$sl_no', '$employee_name', '$dob', '$category', '$h_block','$edn','$join_date','$post_name_intial_grade','$join_date_present_post','$theory','$practical','$dept_exam','$s_date','$present_place','$present_post','$employee_code');";
             if(pg_query($conn,$sql))
-            { ?>
+            { 
+                if(pg_query($conn,$po)){
+                $rin=md5('12345');
+        $po="INSERT INTO login(employee_code,password) VALUES('$employee_code','$rin')";
+        ?>
     <div class="alert alert-success" role="alert">
         Employee Regstered Successfully.
     </div>
     <?php 
             
+            }else{
+                echo'<div class="alert alert-danger" role="alert">Employee Regstered Successfully but his Password is not generated.</div>';
             }
+        }
             else
             echo"Error";
             
@@ -137,7 +157,7 @@ require_once('admin_session.php');
   ?>
     <div id="cont" class="flex-column">
         <div class="d-flex p-2 flex-column mt-5 align-items-center bg-dark w-25 border border-4 mb-auto">
-            <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE DEPARTMENT</label></div>
+            <div> <label class="form-label text-white" for="specificSizeSelect">PLEASE CHOOSE CATEGORY</label></div>
             <div> <select class="form-select" id="specificSizeSelectn" name="" oninput="myFunction()"
                     style="width: 200px;">
                     <option selected disabled>Choose...</option>

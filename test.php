@@ -10,13 +10,13 @@ if($table=='driver'&& $post!="all"){
 $result=pg_query($conn,$sql);
 
  
-      echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> '.$post.' Driver Gradation list</th></tr><tr><th scope="col">Sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Driver </th> <th scope="col">Date of Birth </th><th scope="col">Caste/ Category</th><th scope="col">Home Address with name of the Assembly Constituency</th><th scope="col">Date of Entry into Govt. Service</th><th scope="col">Date of Joining to post of Sr. Driver </th><th scope="col">Date of Joining to post of Head Driver </th> <th scope="col">Driving Licence No. </th> <th scope="col">Date of Superannuation</th> <th scope="col">Present place of posting</th><th scope="col">Post of the Driver</th></tr>' ;
+      echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> '.$post.' Driver Gradation list</th></tr><tr><th scope="col">Gradation Sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Driver </th> <th scope="col">Date of Birth </th><th scope="col">Caste/ Category</th><th scope="col">Home Address with name of the Assembly Constituency</th><th scope="col">Date of Entry into Govt. Service</th><th scope="col">Date of Joining to post of Sr. Driver </th><th scope="col">Date of Joining to post of Head Driver </th> <th scope="col">Driving Licence No. </th> <th scope="col">Date of Superannuation</th> <th scope="col">Present place of posting</th><th scope="col">Post of the Driver</th></tr>' ;
      if (pg_num_rows($result) > 0) {
         $i = 1;
         while ($row = pg_fetch_array($result)) {
           
 
-         echo"<tr> <td> $i  </td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a> </td>  <td> <div id='name$i'>{$row['name']}</div></td> <td>$row[dob] </td> <td>$row[category] </td> <td>$row[h_block] </td> <td> $row[date_of_entry_into_govt_service] </td> <td> {$row['date_of_joining_to_post_of_sr_driver']}</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td> <td>$row[present_post_grade]</td></tr>";
+         echo"<tr> <td>$row[sl_no]</td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a> </td>  <td> <div id='name$i'>{$row['name']}</div></td> <td>$row[dob] </td> <td>$row[category] </td> <td>$row[h_block] </td> <td> $row[date_of_entry_into_govt_service] </td> <td> {$row['date_of_joining_to_post_of_sr_driver']}</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td> <td>$row[present_post_grade]</td></tr>";
         
           $i++;
           
@@ -39,7 +39,7 @@ $result=pg_query($conn,$sql);
     
 
     
-     echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> Junior Driver Gradation list</th></tr><tr><th scope="col">Sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Driver </th><th scope="col">Date of Birth </th><th scope="col">Caste/ Category</th><th scope="col">Home Address with name of the Assembly Constituency</th><th scope="col">Date of Entry into Govt. Service</th><th scope="col">Date of Joining to post of Sr. Driver </th><th scope="col">Date of Joining to post of Head Driver </th><th scope="col">Driving Licence No. </th><th scope="col">Date of Superannuation</th><th scope="col">Present place of posting</th><th scope="col">Post of the Driver</th> </tr>';
+     echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> Junior Driver Gradation list</th></tr><tr><th scope="col">Gradation Sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Driver </th><th scope="col">Date of Birth </th><th scope="col">Caste/ Category</th><th scope="col">Home Address with name of the Assembly Constituency</th><th scope="col">Date of Entry into Govt. Service</th><th scope="col">Date of Joining to post of Sr. Driver </th><th scope="col">Date of Joining to post of Head Driver </th><th scope="col">Driving Licence No. </th><th scope="col">Date of Superannuation</th><th scope="col">Present place of posting</th><th scope="col">Post of the Driver</th> </tr>';
           
 
       if (pg_num_rows($result) > 0) {
@@ -50,7 +50,7 @@ $result=pg_query($conn,$sql);
 
 
 
-    echo"<tr><td>$i</td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a></td><td>$row[name]</td><td>$row[dob]></td><td>$row[category]</td><td>$row[h_block]</td><td>$row[date_of_entry_into_govt_service]</td><td>$row[date_of_joining_to_post_of_sr_driver]</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td><td>$row[present_post_grade]</td></tr>";
+    echo"<tr><td>$row[dob]</td><td><a href='edit_employee.php?employee=$row[employee_code]&table=$table'>$row[employee_code]</a></td><td>$row[name]</td><td>$row[dob]></td><td>$row[category]</td><td>$row[h_block]</td><td>$row[date_of_entry_into_govt_service]</td><td>$row[date_of_joining_to_post_of_sr_driver]</td><td>$row[date_of_joining_to_post_of_head_driver]</td><td>$row[driving_licence_no]</td><td>$row[date_of_superannuation]</td><td>$row[present_place_of_posting]</td><td>$row[present_post_grade]</td></tr>";
     
           $i++;
         }
