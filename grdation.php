@@ -870,7 +870,7 @@ $pass=$_SESSION['dob'];
                                                                                                         <?php
                                     }
                                     
-    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='Senior Revenue Assistant'ORDER BY sl_no ASC;");
+    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='Section Officer'ORDER BY sl_no ASC;");
 
     ?>
                                                                                                         <table
@@ -879,9 +879,7 @@ $pass=$_SESSION['dob'];
                                                                                                             <tr>
                                                                                                                 <th colspan="17"
                                                                                                                     class="text-center fs-2 ">
-                                                                                                                    Senior
-                                                                                                                    Revenue
-                                                                                                                    Assistant
+                                                                                                                    Section Officer
                                                                                                                     Gradation
                                                                                                                     list
                                                                                                                 </th>
@@ -1059,6 +1057,195 @@ $pass=$_SESSION['dob'];
                                                                                                                     </th>
                                                                                                                     <?php
                                     }
+                                    $result = pg_query($conn, "SELECT * FROM $table where present_post_grade='Senior Revenue Assistant'ORDER BY sl_no ASC;");
+
+                                    ?>
+                                                                                                                                        <table
+                                                                                                                                            class="table table-striped"
+                                                                                                                                            style="font-size: 14px;">
+                                                                                                                                            <tr>
+                                                                                                                                                <th colspan="17"
+                                                                                                                                                    class="text-center fs-2 ">
+                                                                                                                                                    Senior
+                                                                                                                                                    Revenue
+                                                                                                                                                    Assistant
+                                                                                                                                                    Gradation
+                                                                                                                                                    list
+                                                                                                                                                </th>
+                                                                                                                                            </tr>
+                                                                                                                                            <tr>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    Gradation
+                                                                                                                                                    SL
+                                                                                                                                                    NO.
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    Name
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    Date
+                                                                                                                                                    of
+                                                                                                                                                    Birth
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    Caste/
+                                                                                                                                                    Category
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    HOME
+                                                                                                                                                    BLOCK
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    EDN
+                                                                                                                                                    QULAFICATION
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    Date
+                                                                                                                                                    of
+                                                                                                                                                    Entry
+                                                                                                                                                    into
+                                                                                                                                                    Govt.
+                                                                                                                                                    Service
+                                                                                                                                                </th>
+                                
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    R_YEAR
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    PA_MONTH
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    PA_YEAR
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    FA_MONTH
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    FA_YEAR
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    J_SC_DATE
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    J_HC_DATE
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    S_DATE
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    PRESENT
+                                                                                                                                                    PLACE
+                                                                                                                                                    OF
+                                                                                                                                                    POSTING
+                                                                                                                                                </th>
+                                                                                                                                                <th
+                                                                                                                                                    scope="col">
+                                                                                                                                                    PRESENT
+                                                                                                                                                    POST
+                                                                                                                                                </th>
+                                
+                                                                                                                                            </tr>
+                                
+                                                                                                                                            <?php
+                                
+                                                                    if (pg_num_rows($result) > 0) {
+                                                                      $i = 1;
+                                                                      while ($row = pg_fetch_array($result)) {
+                                                                        ?>
+                                
+                                
+                                
+                                
+                                                                                                                                            <tr>
+                                
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["sl_no"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["name"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["category"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["dob"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["h_block"]; ?>
+                                                                                                                                                </td>
+                                
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["e_qual"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["j_date"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["r_year"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["pa_paper_i"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["pa_paper_ii"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["fa_paper_iii"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["fa_paper_iv"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["j_sc_date"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["j_hc_date"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["s_date_present"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["place_of_posting"]; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $row["present_post_grade"]; ?>
+                                                                                                                                                </td>
+                                
+                                
+                                                                                                                                            </tr>
+                                
+                                                                                                                                            <?php
+                                                                        $i++;
+                                                                      }
+                                                                    } else {
+                                                                      ?>
+                                                                                                                                            <table
+                                                                                                                                                class="table table-striped">
+                                                                                                                                                <tr>
+                                                                                                                                                    <th scope="col"
+                                                                                                                                                        style="text-align:center">
+                                                                                                                                                        Record
+                                                                                                                                                        not
+                                                                                                                                                        found
+                                                                                                                                                    </th>
+                                                                                                                                                    <?php
+                                                                    }
                                     
   
 

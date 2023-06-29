@@ -61,13 +61,21 @@
 
         $sql= "UPDATE $table SET sl_no='$sl_no', name='$employee_name', dob='$dob', category='$category', h_block='$h_block',date_of_entry_into_govt_service='$join_date', date_of_joining_to_post_of_sr_driver='$senior_date', date_of_joining_to_post_of_head_driver='$head_date', driving_licence_no='$driving_license', date_of_superannuation='$s_date', present_place_of_posting='$present_place',present_post_grade='$present_post', employee_code='$employee_code'  WHERE employee_code='$prevemployee_code';";
 
-        if (pg_query($conn, $sql)) { ?>
+        if (pg_query($conn, $sql)) { 
+            $sql1= "UPDATE login SET employee_code='$employee_code' WHERE employee_code='$prevemployee_code'";
+            if (pg_query($conn, $sql1)) {
+
+            ?>
+            
             <div class="alert alert-success" role="alert">
                 Employee Record updated Successfully.
             </div>
         <?php
             header("location: view_employee.php?yes=1");
-        } else
+        } else{
+            echo "Employee code not update in login please update it manualy ";
+        }
+     } else
             echo "Error";
     }
 
@@ -96,12 +104,19 @@
         $sql= "UPDATE $table SET sl_no='$sl_no', name='$employee_name', dob='$dob', category='$category', h_block='$h_block', e_qual='$e_qual', j_date='$join_date', r_year='$r_year', pa_paper_i='$pa_paper_i', pa_paper_ii='$pa_paper_ii', fa_paper_iii='$fa_paper_iii', fa_paper_iv='$fa_paper_iv', s_date_present='$s_date', place_of_posting='$present_place', present_post_grade='$present_post', j_sc_date='$j_sc_date', j_hc_date='$j_hc_date', employee_code='$employee_code' WHERE employee_code='$prevemployee_code';";
 
          
-        if (pg_query($conn, $sql)) { ?>
+        if (pg_query($conn, $sql)) {  $sql1= "UPDATE login SET employee_code='$employee_code' WHERE employee_code='$prevemployee_code'";
+            if (pg_query($conn, $sql1)) {
+
+            ?>
+            
             <div class="alert alert-success" role="alert">
-                Employee Record Updated Successfully.
+                Employee Record updated Successfully.
             </div>
         <?php
-        header("location: view_employee.php?yes=1");
+            header("location: view_employee.php?yes=1");
+        } else{
+            echo "Employee code not update in login please update it manualy ";
+        }
         } else
             echo "Error";
     }
@@ -130,12 +145,19 @@
         $sql = "UPDATE $table SET sl_no='$sl_no', name='$employee_name', dob='$dob', category='$category', h_block='$h_block', edn_qual='$edn', j_date_govt_service='$join_date', post_name_intial_grade='$post_name_intial_grade',  j_date_present_grade='$join_date_present_post', theory='$theory', practical='$practical', deptt_exam='$dept_exam', s_date='$s_date',present_place_of_posting='$present_place', present_post_grade='$present_post', employee_code='$employee_code'  WHERE employee_code='$prevemployee_code';";
 
         
-        if (pg_query($conn, $sql)) { ?>
+        if (pg_query($conn, $sql)) {  $sql1= "UPDATE login SET employee_code='$employee_code' WHERE employee_code='$prevemployee_code'";
+            if (pg_query($conn, $sql1)) {
+
+            ?>
+            
             <div class="alert alert-success" role="alert">
-                Employee Regstered Successfully.
+                Employee Record updated Successfully.
             </div>
-    <?php
-        header("location: view_employee.php?yes=1");
+        <?php
+            header("location: view_employee.php?yes=1");
+        } else{
+            echo "Employee code not update in login please update it manualy ";
+        }
         } else
             echo "Error";
     }

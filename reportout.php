@@ -9,7 +9,7 @@ $sdate;
 
 
 <?php
- $sql="SELECT*FROM applicatio WHERE form_type='$form' AND able='$table' AND date_part('year',apply_date)='$year';" ;
+ $sql="SELECT*FROM applicatio WHERE form_type='$form' AND able='$table' AND date_part('year',apply_date)='$year'ORDER BY apply_date DESC;" ;
  $result=pg_query($conn,$sql);
  echo '<table class="table table-striped mb-5" ><tr><th colspan="13" class="text-center fs-2 "> '.$form.' Application list</th></tr><tr><th scope="col">Gradation sl no.</th><th scope="col">Employee Code</th><th scope="col">Name of the Applicant </th> <th scope="col">Application no. </th><th scope="col">Apply date</th><th scope="col">Approved date</th><th scope="col">Status</th><th scope="col">Application type</th><th scope="col">Present post</th> </tr>' ;
  if (pg_num_rows($result) > 0) {
